@@ -240,3 +240,9 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+# LibreOffice temporary files
+.~lock.*
+
+# Something strange
+.goutputstream-*
