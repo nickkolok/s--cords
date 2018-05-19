@@ -33,5 +33,89 @@
 
 Выполнил Николай Авдеев.
 
+\paragraph{Постановка задачи.}
+
+Выписать функцию Грина для краевой задачи, состоящей из уравнения
+\begin{equation}
+	-(p(x)u'(x))' = f(x)
+\end{equation}
+с краевыми условиями
+\begin{gather}
+	l_1(u) = \alpha_{11} u'(0) + \alpha_{10} u(0) = 0
+	\\
+	l_2(u) = \alpha_{21} u'(l) + \alpha_{20} u(l) = 0
+\end{gather}
+при $p(x)$ общего вида и при $p(x)\equiv 1$.
+
+\paragraph{Решение.}
+
+\paragraph{Однородное уравнение.}
+
+Выпишем и решим однородное уравенение:
+\begin{equation}
+	-(p(x)u'(x))' = 0
+\end{equation}
+или, что то же самое,
+\begin{equation}
+	p(x)u'(x) = C_1,
+\end{equation}
+откуда
+\begin{equation}
+	u(x) = C_1\int_{0}^{x} \frac{d\tau}{p(\tau)} + C_2.
+\end{equation}
+Следовательно, в качестве фундаментальной системы решений (ФСР) можно взять
+\begin{equation}
+	u_1(x) \equiv 1, ~~ u_2(x) = \int_{0}^{x} \frac{d\tau}{p(\tau)}.
+\end{equation}
+
+\paragraph{Функция Коши.}
+Построим сначала функцию $k(x, s)$:
+\begin{multline}
+	k(x,s) =
+	- \frac{
+		\left|\begin{array}{cc}
+			u_1(s)  & u_2(s) \\
+			u_1(x)  & u_2(x)
+		\end{array}\right|
+	}{
+		p(s)
+		\left|\begin{array}{cc}
+			u_1 (s) & u_2 (s) \\
+			u_1'(s) & u_2'(s)
+		\end{array}\right|
+	}
+	=
+	- \frac{
+		\left|\begin{array}{cc}
+			1  & u_2(s) \\
+			1  & u_2(x)
+		\end{array}\right|
+	}{
+		p(s)
+		\left|\begin{array}{cc}
+			1 & u_2 (s) \\
+			0 & u_2'(s)
+		\end{array}\right|
+	}
+	=
+	- \frac{
+		u_2(x) - u_2(s)
+	}{
+		p(s) u_2'(s)
+	}
+	=
+	- \frac{
+		u_2(x) - u_2(s)
+	}{
+		p(s) \frac{1}{p(s)}
+	}
+	=
+	\\=
+	u_2(s) - u_2(x)
+	=
+	\int_x^s\frac{d\tau}{p(\tau)}
+\end{multline}
+Заметим, что функция $k(x,s)$ является аддитивной функцией промежутка.
+
 
 \end{document}
