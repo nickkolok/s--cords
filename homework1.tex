@@ -140,5 +140,76 @@
 	\end{cases}
 \end{equation}
 
+\paragraph{Характеристический определитель.}
+
+Выпишем характеристический определитель:
+\begin{multline}
+	\Delta
+	=
+	\left|\begin{array}{cc}
+		l_1 u_1 & l_1 u_2 \\
+		l_2 u_1 & l_2 u_2
+	\end{array}\right|
+	=
+	\left|\begin{array}{cc}
+		\alpha_{10} & \frac{\alpha_{11}}{p(0)} \\
+		\alpha_{20} & \frac{\alpha_{21}}{p(l)} +\alpha_{20} k(0,l)
+	\end{array}\right|
+	=
+	\frac{\alpha_{10}\alpha_{21}}{p(l)} + \alpha_{10}\alpha_{20} k(0,l) - \frac{\alpha_{11}\alpha_{20}}{p(0)}
+	=
+	\\=
+	\frac{\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)}{p(0)p(l)}
+\end{multline}
+
+\paragraph{Специальная ФСР (СФСР)}
+Построим СФСР $\{v_1, v_2\}$:
+\begin{multline}
+	v_1 =
+	\Delta^{-1}
+	\left|\begin{array}{cc}
+		u_1(x) & u_2(x) \\
+		l_2 u_1 & l_2 u_2
+	\end{array}\right|
+	=
+	\Delta^{-1}
+	\left|\begin{array}{cc}
+		1 & k(0,x) \\
+		\alpha_{20} & \frac{\alpha_{21}}{p(l)} +\alpha_{20} k(0,l)
+	\end{array}\right|
+	=
+	\\=
+	\Delta^{-1}
+	\left(
+		\frac{\alpha_{21}}{p(l)} +\alpha_{20} k(0,l) - \alpha_{20} k(0,x)
+	\right)
+	=
+	\Delta^{-1}
+	\left(
+		\frac{\alpha_{21}}{p(l)} +\alpha_{20} k(x,l)
+	\right)
+\end{multline}
+
+\begin{equation}
+	v_2 =
+	\Delta^{-1}
+	\left|\begin{array}{cc}
+		l_1 u_1 & l_1 u_2 \\
+		u_1(x) & u_2(x)
+	\end{array}\right|
+	=
+	\Delta^{-1}
+	\left|\begin{array}{cc}
+		\alpha_{10} & \frac{\alpha_{11}}{p(0)} \\
+		1       & k(0, x)
+	\end{array}\right|
+	=
+	\Delta^{-1}
+	\left(
+		\alpha_{10} k(0, x) - \frac{\alpha_{11}}{p(0)}
+	\right)
+\end{equation}
+
+
 
 \end{document}
