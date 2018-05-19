@@ -297,16 +297,28 @@
 	}{
 		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
 	}
+	=
+	\\=
+	\frac{
+		  \alpha_{10} p(0) k(0, x) (\alpha_{21} + \alpha_{20} p(l) k(s, l))
+		- \alpha_{11} (\alpha_{21} + \alpha_{20} p(l) k(s,l))
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	=
+	\\=
+	\frac{
+		 \Bigl(\alpha_{10} p(0) k(0, x) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(s, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
 \end{multline}
 Итак, если $0 \leq x\leq s \leq l$, то
 \begin{equation}\label{Gxs_x_leq_s}
 	G(x,s)
 	=
 	\frac{
-		  \alpha_{10} \alpha_{21} p(0) k(0, x)
-		- \alpha_{11} \alpha_{21}
-		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
-		- \alpha_{11} \alpha_{20} p(l) k(s,l)
+		 \Bigl(\alpha_{10} p(0) k(0, x) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(s, l)\Bigr)
 	}{
 		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
 	}
@@ -377,7 +389,78 @@
 	\Bigr)\cdot \\ \cdot \Bigl(
 		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
 	\Bigr)^{-1}
+	\\=
+	\frac{
+		  \Bigl(\alpha_{10} p(0) k(0, s)- \alpha_{11}\Bigr) \Bigl(\alpha_{21} + \alpha_{20} p(l) k(x, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
 \end{multline}
+
+Подведём итог.
+При $0 \leq x\leq s \leq l$
+\begin{equation}\label{Gxs_final_1}
+	G(x,s)
+	=
+	\frac{
+		 \Bigl(\alpha_{10} p(0) k(0, x) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(s, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	.
+\end{equation}
+При $0 \leq s\leq x \leq l$
+\begin{equation}\label{Gxs_final_2}
+	G(x,s)
+	=
+	\frac{
+		 \Bigl(\alpha_{10} p(0) k(0, s) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(x, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	,
+\end{equation}
+где $k(x,s) = \int_x^s \frac{d\tau}{p(\tau)}$.
+Сравнивая выражения \eqref{Gxs_final_1} и \eqref{Gxs_final_2},
+легко убедиться, что функция Грина симметрична относительно переменных.
+
+\paragraph{Частный случай $p(x) \equiv 1$}.
+Тогда $k(x,s) = s -x$.
+
+При $0 \leq x\leq s \leq l$
+\begin{equation}
+	G(x,s)
+	=
+	\frac{
+		 \Bigl(\alpha_{10} p(0) k(0, x) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(s, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	=
+	\frac{
+		 \Bigl(\alpha_{10} x - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} (l-s)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}  - \alpha_{11}\alpha_{20} + \alpha_{10}\alpha_{20} l
+	}
+	.
+\end{equation}
+При $0 \leq s\leq x \leq l$
+\begin{equation}
+	G(x,s)
+	=
+	\frac{
+		 \Bigl(\alpha_{10} p(0) k(0, s) - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} p(l) k(x, l)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	=
+	\frac{
+		 \Bigl(\alpha_{10} s - \alpha_{11}\Bigr) \cdot \Bigl(\alpha_{21} + \alpha_{20} (l-x)\Bigr)
+	}{
+		\alpha_{10}\alpha_{21}  - \alpha_{11}\alpha_{20} + \alpha_{10}\alpha_{20} l
+	}
+	.
+\end{equation}
 
 
 \end{document}
