@@ -64,7 +64,7 @@
 	u(x) = C_1\int_{0}^{x} \frac{d\tau}{p(\tau)} + C_2.
 \end{equation}
 Следовательно, в качестве фундаментальной системы решений (ФСР) можно взять
-\begin{equation}
+\begin{equation}\label{fsr-int}
 	u_1(x) \equiv 1, ~~ u_2(x) = \int_{0}^{x} \frac{d\tau}{p(\tau)}.
 \end{equation}
 
@@ -116,6 +116,29 @@
 	\int_x^s\frac{d\tau}{p(\tau)}
 \end{multline}
 Заметим, что функция $k(x,s)$ является аддитивной функцией промежутка.
+
+Таким образом, ФСР \eqref{fsr-int} можно записать в виде
+\begin{equation}\label{fsr-k}
+	u_1(x) \equiv 1, ~~ u_2(x) = k(0,x).
+\end{equation}
+
+Теперь мы можем выписать функцию Коши.
+Зная, что
+\begin{equation}
+	K_2(x, s) = \begin{cases}
+		0     , & \mbox{если~~~} 0 \leq x \leq s \leq l
+		\\
+		k(x,s), & \mbox{если~~~} 0 \leq s \leq x \leq l
+	\end{cases}
+\end{equation}
+получаем функцию Коши в явном виде:
+\begin{equation}
+	K_2(x, s) = \begin{cases}
+		0     , & \mbox{если~~~} 0 \leq x \leq s \leq l
+		\\
+		\int_x^s\frac{d\tau}{p(\tau)}, & \mbox{если~~~} 0 \leq s \leq x \leq l
+	\end{cases}
+\end{equation}
 
 
 \end{document}
