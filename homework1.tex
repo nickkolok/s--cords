@@ -313,15 +313,15 @@
 Пусть теперь $0 \leq s\leq x \leq l$.
 
 Проведём некоторые подготовительные вычисления:
-\begin{multline}
-	k(0, x)k(s, l) - k(0,l) k(x,s)
+\begin{multline}\label{k_aux}
+	k(0, x) k(s, l) + k(0, l) k(x, s)
 	=
-	k(0, x)k(s, l) - k(0,x) k(x,s) - k(x,l) k(x,s)
+	k(0, x)k(s, l) + k(0, x) k(x, s) + k(x, l) k(x, s)
 	=
 	\\=
-	k(0, x)k(x, l) - k(x,l) k(x,s)
+	k(0, x) k(x, l) + k(x, l) k(x, s)
 	=
-	k(0, s)k(x, l)
+	k(0, s) k(x, l)
 \end{multline}
 
 Теперь можно выписать $G(x,s)$ при $0 \leq s\leq x \leq l$,
@@ -350,6 +350,28 @@
 		+ \alpha_{10} \alpha_{21} p(0) k(x, s)
 		- \alpha_{11} \alpha_{20} p(l) k(x, s)
 		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0,l) k(x,s)
+	\Bigr)\cdot \\ \cdot \Bigl(
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	\Bigr)^{-1}
+	=
+	\\=
+	\Bigl(
+		  \alpha_{10} \alpha_{21} p(0) k(0, s)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
+		- \alpha_{11} \alpha_{20} p(l) k(x, l)
+		+ \\
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, l) k(x, s)
+	\Bigr)\cdot \Bigl(
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	\Bigr)^{-1}
+	\mathop{=}^{(\ref{k_aux})}
+	\\=
+	\Bigl(
+		  \alpha_{10} \alpha_{21} p(0) k(0, s)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, s) k(x, l)
+		- \alpha_{11} \alpha_{20} p(l) k(x, l)
 	\Bigr)\cdot \\ \cdot \Bigl(
 		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
 	\Bigr)^{-1}
