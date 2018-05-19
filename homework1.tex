@@ -210,6 +210,150 @@
 	\right)
 \end{equation}
 
+\paragraph{Функция Грина.}
+Вычислим сначала вспомогательные выражения:
+
+\begin{equation}
+	l_1K_2(\cdot, s) =
+	\alpha_{11} \frac{d}{dx}K_2(x, s)|_{x=0} + \alpha_{10} K_2(0,s)
+	=
+	0
+%	\alpha_{11} \frac{d}{dx}k(x, s)|_{x=0}
+%	=
+%	\\=
+%	\alpha_{11} \left.\left(\frac{d}{dx} \int_x^s \frac{d\tau}{p(\tau)}\right)\right|_{x=0}
+%	=
+%	- \frac{\alpha_{11}}{p(0)}
+\end{equation}
+
+\begin{multline}
+	l_2K_2(\cdot, s) =
+	\alpha_{21} \frac{d}{dx}K_2(x, s)|_{x=l} + \alpha_{20} K_2(l,s)
+	=
+	\alpha_{21} \frac{d}{dx}k(x, s)|_{x=l} + \alpha_{20} k(l,s)
+	=
+	-\frac{\alpha_{21}}{p(l)} + \alpha_{20} k(l,s)
+\end{multline}
+
+Функция Грина задаётся равенством
+\begin{equation}
+	G(x,s) = K_2(x,s) - l_1 K_2(\cdot, s) \cdot v_1(x) - l_2 K_2(\cdot, s) \cdot v_2(x)
+\end{equation}
+Пусть сначала $0 \leq x\leq s \leq l$, тогда $K_2(x,s) = 0$ и
+\begin{multline}
+	G(x,s)
+	=
+	- l_1 K_2(\cdot, s) \cdot v_1(x) - l_2 K_2(\cdot, s) \cdot v_2(x)
+	=
+	- 0 - l_2 K_2(\cdot, s) \cdot v_2(x)
+	=
+	\\=
+	- \left( -\frac{\alpha_{21}}{p(l)} + \alpha_{20} k(l,s) \right) \cdot v_2(x)
+	=
+	\left( \frac{\alpha_{21}}{p(l)} - \alpha_{20} k(l,s) \right) \cdot v_2(x)
+	=
+	\\=
+	\left( \frac{\alpha_{21}}{p(l)} - \alpha_{20} k(l,s) \right) \cdot
+	\Delta^{-1}
+	\left(
+		\alpha_{10} k(0, x) - \frac{\alpha_{11}}{p(0)}
+	\right)
+	=
+	\\=
+	\Delta^{-1}
+	\left(
+		\frac{\alpha_{21}}{p(l)} - \alpha_{20} k(l,s)
+	\right) \cdot \left(
+		\alpha_{10} k(0, x) - \frac{\alpha_{11}}{p(0)}
+	\right)
+	=
+	\\=
+	\Delta^{-1}
+	\left(
+		 \frac{\alpha_{10}\alpha_{21} k(0, x)}{p(l)}
+		-\frac{\alpha_{11}\alpha_{21}}{p(0)p(l)}
+		-\alpha_{10} \alpha_{20} k(0, x) k(l,s)
+		+\frac{\alpha_{11}\alpha_{20} k(l,s)}{p(0)}
+	\right)
+	=
+	\\=
+	\frac{
+		  \alpha_{10} \alpha_{21} p(0) k(0, x)
+		- \alpha_{11} \alpha_{21}
+		- \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(l, s)
+		+ \alpha_{11} \alpha_{20} p(l) k(l,s)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	=
+	\\=
+	\frac{
+		  \alpha_{10} \alpha_{21} p(0) k(0, x)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
+		- \alpha_{11} \alpha_{20} p(l) k(s,l)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+\end{multline}
+Итак, если $0 \leq x\leq s \leq l$, то
+\begin{equation}\label{Gxs_x_leq_s}
+	G(x,s)
+	=
+	\frac{
+		  \alpha_{10} \alpha_{21} p(0) k(0, x)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
+		- \alpha_{11} \alpha_{20} p(l) k(s,l)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+\end{equation}
+
+Пусть теперь $0 \leq s\leq x \leq l$.
+
+Проведём некоторые подготовительные вычисления:
+\begin{multline}
+	k(0, x)k(s, l) - k(0,l) k(x,s)
+	=
+	k(0, x)k(s, l) - k(0,x) k(x,s) - k(x,l) k(x,s)
+	=
+	\\=
+	k(0, x)k(x, l) - k(x,l) k(x,s)
+	=
+	k(0, s)k(x, l)
+\end{multline}
+
+Теперь можно выписать $G(x,s)$ при $0 \leq s\leq x \leq l$,
+учитывая, что в таком случае $K_2(x,s) = k(x,s)$:
+\begin{multline}
+	G(x,s)
+	=
+	k(x,s)
+	+
+	\frac{
+		  \alpha_{10} \alpha_{21} p(0) k(0, x)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
+		- \alpha_{11} \alpha_{20} p(l) k(s,l)
+	}{
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	}
+	=
+	\\=
+	\Bigl(
+		  \alpha_{10} \alpha_{21} p(0) k(0, x)
+		- \alpha_{11} \alpha_{21}
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0, x) k(s, l)
+		- \alpha_{11} \alpha_{20} p(l) k(s, l)
+		+ \\
+		+ \alpha_{10} \alpha_{21} p(0) k(x, s)
+		- \alpha_{11} \alpha_{20} p(l) k(x, s)
+		+ \alpha_{10} \alpha_{20} p(0) p(l) k(0,l) k(x,s)
+	\Bigr)\cdot \\ \cdot \Bigl(
+		\alpha_{10}\alpha_{21}p(0)  - \alpha_{11}\alpha_{20}p(l) + \alpha_{10}\alpha_{20} p(0) p(l) k(0,l)
+	\Bigr)^{-1}
+\end{multline}
 
 
 \end{document}
