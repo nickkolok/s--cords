@@ -69,12 +69,189 @@
 	Vu - A_f u
 	=
 	\\=
-	\int_{\Gamma} \frac{(p(x)u'(x))^2}{2} - f(x) u(x) dx
-	+ \frac{k_1}{2} (u(b_1))^2 + \frac{k_4}{2} (u(b_4))^2
-	+ \frac{k_2}{2} (u(b_2)-u(a_4))^2 + \frac{k_3}{2} (u(b_2)-u(a_3))^2
+	\int_{\Gamma} \frac{p(x)(u'(x))^2}{2} - f(x) u(x) dx
+	+ \frac{k_1}{2} (u(a_1^1))^2
+	+ \frac{k_2}{2} (u(b_2))^2
+	+ \frac{k_3}{2} (u(a_2^3)-u(a_2^4))^2
+	+ \frac{k_4}{2} (u(a_2^2)-u(a_2^4))^2
 \end{multline}
 Найдём теперь его первую вариацию.
 В силу линейности первой вариации мы можем воспользоваться
 выражением для первой вариации интегральной части, полученным ранее:
+\begin{multline}
+	\delta\left( \int_{\Gamma} \frac{p(x)(u'(x))^2}{2} - f(x) u(x) dx, v \right)
+	=
+	\int_{\Gamma} p(x)u'(x)v'(x) - f(x) v(x) dx
+	=
+	\\=
+	\left.\sum_{i=1}^{4} p(x) u'(x) v(x)\right|_{x=\gamma_i^-}^{x=\gamma_i^+}
+	=
+	\\ =
+	  p(a_1^1) u'(a_1^1) v(a_1^1) - p(b_1  ) u'(b_1  ) v(b_1  )
+	+ p(b_2  ) u'(b_2  ) v(b_2  ) - p(a_2^2) u'(a_2^2) v(a_2^2)
+	+ \\
+	+ p(b_3  ) u'(b_3  ) v(b_3  ) - p(a_2^3) u'(a_2^3) v(a_2^3)
+	+ p(a_2^4) u'(a_2^4) v(a_2^4) - p(a_1^4) u'(a_1^4) v(a_1^4)
+\end{multline}
+Исходя из того, что
+\begin{equation}
+	\delta((u(a))^2, v) = 2 u(a) v(a)
+\end{equation}
+и
+\begin{equation}
+	\delta((u(a)-u(b))^2, v) = 2 (u(a) - u(b)) (v(a) - v(b))
+\end{equation}
+можно выписать, что
+\begin{multline}
+	\delta(Ju, v)
+	=
+	  p(a_1^1) u'(a_1^1) v(a_1^1) - p(b_1  ) u'(b_1  ) v(b_1  )
+	+ p(b_2  ) u'(b_2  ) v(b_2  ) - p(a_2^2) u'(a_2^2) v(a_2^2)
+	+ \\
+	+ p(b_3  ) u'(b_3  ) v(b_3  ) - p(a_2^3) u'(a_2^3) v(a_2^3)
+	+ p(a_2^4) u'(a_2^4) v(a_2^4) - p(a_1^4) u'(a_1^4) v(a_1^4)
+	+ \\
+	+ k_1  u(a_1^1) v(a_1^1)
+	+ k_2  u(b_2  ) v(b_2  )
+	+ k_3 (u(a_2^3) - u(a_2^4)) (v(a_2^3) - v(a_2^4))
+	+ k_4 (u(a_2^2) - u(a_2^4)) (v(a_2^2) - v(a_2^4))
+\end{multline}
 
+Из условия жёсткого закрепления $\gamma_1$ в $b_1$ имеем
+\begin{equation}
+	u(b_1) = v(b_1) = 0.
+\end{equation}
+
+Из условия свободного конца $\gamma_3$ в $b_3$ имеем
+\begin{equation}
+	u'(b_3) = v'(b_3) = 0.
+\end{equation}
+
+Из условия сцепления струн $\gamma_1$ и $\gamma_4$ в точке $a_1$ имеем
+\begin{equation}
+	u(a_1^1) = u(a_1^4), ~~ v(a_1^1) = v(a_1^4)
+\end{equation}
+
+С учётом этих трёх условий имеем
+\begin{multline}
+	\delta(Ju, v)
+	=
+	  p(a_1^1) u'(a_1^1) v(a_1^1)
+	+ p(b_2  ) u'(b_2  ) v(b_2  ) - p(a_2^2) u'(a_2^2) v(a_2^2)
+	- \\
+	                              - p(a_2^3) u'(a_2^3) v(a_2^3)
+	+ p(a_2^4) u'(a_2^4) v(a_2^4) - p(a_1^4) u'(a_1^4) v(a_1^1)
+	+ \\
+	+ k_1  u(a_1^1) v(a_1^1)
+	+ k_2  u(b_2  ) v(b_2  )
+	+ k_3 (u(a_2^3) - u(a_2^4)) (v(a_2^3) - v(a_2^4))
+	+ k_4 (u(a_2^2) - u(a_2^4)) (v(a_2^2) - v(a_2^4))
+\end{multline}
+
+
+
+Воспользуемся теперь произвольностью выбора $v$
+и тем, что в стационарном состоянии $\delta(Ju, v) = 0$.
+Обозначим $A = \{b_2, b_3, a_1^1, a_1^4, a_2^2, a_2^3, a_2^4\}$.
+Возьмём сначала $v$ такую, что $v(A \setminus \{a_1^1\}) = 0$, $v(a_1^1) \neq 0$.
+Тогда
+\begin{multline*}
+	0 = \delta(Ju, v) =
+	  p(a_1^1) u'(a_1^1) v(a_1^1)
+	- p(a_1^4) u'(a_1^1) v(a_1^1)
+	+ k_1  u(a_1^1) v(a_1^1)
+	= \\ =
+	  p(a_1^1) u'(a_1^1) v(a_1^1)
+	- p(a_1^4) u'(a_1^4) v(a_1^1)
+	+ k_1  u(a_1^1) v(a_1^1)
+	,
+\end{multline*}
+откуда
+\begin{equation}
+	  p(a_1^1) u'(a_1^1)
+	- p(a_1^4) u'(a_1^4)
+	+ k_1  u(a_1^1) = 0
+\end{equation}
+
+Возьмём $v$ такую, что $v(A \setminus \{a_2^2\}) = 0$, $v(a_2^2) \neq 0$.
+Тогда
+\begin{equation*}
+	0 = \delta(Ju, v) =
+	- p(a_2^2) u'(a_2^2) v(a_2^2)
+	+ k_4 (u(a_2^2) - u(a_2^4)) v(a_2^2)
+	,
+\end{equation*}
+откуда
+\begin{equation}
+	- p(a_2^2) u'(a_2^2) + k_4 (u(a_2^2) - u(a_2^4)) = 0
+\end{equation}
+
+
+Возьмём $v$ такую, что $v(A \setminus \{a_2^3\}) = 0$, $v(a_2^3) \neq 0$.
+Тогда
+\begin{equation*}
+	0 = \delta(Ju, v) =
+	                              - p(a_2^3) u'(a_2^3) v(a_2^3)
+	+ k_3 (u(a_2^3) - u(a_2^4)) v(a_2^3)
+	,
+\end{equation*}
+откуда
+\begin{equation}
+	- p(a_2^3) u'(a_2^3) + k_3 (u(a_2^3) - u(a_2^4)) = 0
+\end{equation}
+
+
+
+Возьмём $v$ такую, что $v(A \setminus \{a_2^4\}) = 0$, $v(a_2^4) \neq 0$.
+Тогда
+\begin{equation*}
+	0 = \delta(Ju, v) =
+	  p(a_2^4) u'(a_2^4) v(a_2^4)
+	- k_3 (u(a_2^3) - u(a_2^4))  v(a_2^4)
+	- k_4 (u(a_2^2) - u(a_2^4))  v(a_2^4)
+	,
+\end{equation*}
+откуда
+\begin{equation}
+	p(a_2^4) u'(a_2^4) - k_3 (u(a_2^3) - u(a_2^4)) - k_4 (u(a_2^2) - u(a_2^4)) = 0
+\end{equation}
+
+
+Наконец, возьмём $v$ такую, что $v(A \setminus \{b_2\}) = 0$, $v(b_2) \neq 0$.
+Тогда
+\begin{equation*}
+	0 = \delta(Ju, v) =
+	  p(b_2  ) u'(b_2  ) v(b_2  )
+	+ k_2  u(b_2  ) v(b_2  )
+	,
+\end{equation*}
+откуда
+\begin{equation}
+	p(b_2  ) u'(b_2  ) + k_2  u(b_2  ) = 0
+\end{equation}
+
+\paragraph{Математическая модель.}
+Таким образом, математической моделью исследуемой струнно-пружинной системы является
+краевая задача, состоящая из уравнения
+\begin{equation}
+	-(p(x)u'(x))' = f(x)
+\end{equation}
+и следующих 8 условий:
+\begin{gather}
+	l_1 u = u(b_1) = 0
+	\\
+	l_2 u = p(b_2  ) u'(b_2  ) + k_2  u(b_2  ) = 0
+	\\
+	l_3 u = u'(b_3) = 0
+	\\
+	l_4 u = u(a_1^1) - u(a_1^4) = 0
+	\\
+	l_5 u = p(a_1^1) u'(a_1^1) - p(a_1^4) u'(a_1^4) + k_1  u(a_1^1) = 0
+	\\
+	l_6 u =
+	\\
+	l_7 u =
+	\\
+	l_8 u =
+\end{gather}
 \end{document}
