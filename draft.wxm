@@ -79,15 +79,27 @@ D:matrix(str1, str2, str3, str4, str5, str6, str7, str8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-k_3:0;
+d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ratsimp(p(b_3) * determinant(D));
+ev(d, k_3 = 0);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-determinant(D);
+d2: ratsimp(d*p(b_3)/k_3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(ev(-d2, k_2 = 0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(ev(-d2, k_4 = 0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(ev(-d2, k_1 = 0));
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
