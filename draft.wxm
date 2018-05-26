@@ -2,6 +2,48 @@
 /* [ Created with wxMaxima version 15.08.2 ] */
 
 /* [wxMaxima: input   start ] */
+l_1u_11 : 0 $ l_1u_12 : 0 $
+l_1u_21 : 0 $ l_1u_22 : 0 $
+l_1u_31 : 0 $ l_1u_32 : 0 $
+l_1u_41 : 0 $ l_1u_42 : 0 $
+
+l_2u_11 : 0 $ l_2u_12 : 0 $
+l_2u_21 : 0 $ l_2u_22 : 0 $
+l_2u_31 : 0 $ l_2u_32 : 0 $
+l_2u_41 : 0 $ l_2u_42 : 0 $
+
+l_3u_11 : 0 $ l_3u_12 : 0 $
+l_3u_21 : 0 $ l_3u_22 : 0 $
+l_3u_31 : 0 $ l_3u_32 : 0 $
+l_3u_41 : 0 $ l_3u_42 : 0 $
+
+l_4u_11 : 0 $ l_4u_12 : 0 $
+l_4u_21 : 0 $ l_4u_22 : 0 $
+l_4u_31 : 0 $ l_4u_32 : 0 $
+l_4u_41 : 0 $ l_4u_42 : 0 $
+
+l_5u_11 : 0 $ l_5u_12 : 0 $
+l_5u_21 : 0 $ l_5u_22 : 0 $
+l_5u_31 : 0 $ l_5u_32 : 0 $
+l_5u_41 : 0 $ l_5u_42 : 0 $
+
+l_6u_11 : 0 $ l_6u_12 : 0 $
+l_6u_21 : 0 $ l_6u_22 : 0 $
+l_6u_31 : 0 $ l_6u_32 : 0 $
+l_6u_41 : 0 $ l_6u_42 : 0 $
+
+l_7u_11 : 0 $ l_7u_12 : 0 $
+l_7u_21 : 0 $ l_7u_22 : 0 $
+l_7u_31 : 0 $ l_7u_32 : 0 $
+l_7u_41 : 0 $ l_7u_42 : 0 $
+
+l_8u_11 : 0 $ l_8u_12 : 0 $
+l_8u_21 : 0 $ l_8u_22 : 0 $
+l_8u_31 : 0 $ l_8u_32 : 0 $
+l_8u_41 : 0 $ l_8u_42 : 0 $
+
+
+
 l_1u_11 : 1 $
 l_2u_21 : k_2 $
 l_2u_22 : -1 $
@@ -22,9 +64,9 @@ l_7u_41 : - k_3 $
 l_8u_22 : 1 $
 l_8u_32 : -1 $
 l_8u_42 : -1 $
-/* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: input   start ] */
+
+
 str1:[l_1u_11,l_1u_12,l_1u_21,l_1u_22,l_1u_31,l_1u_32,l_1u_41,l_1u_42]$
 str2:[l_2u_11,l_2u_12,l_2u_21,l_2u_22,l_2u_31,l_2u_32,l_2u_41,l_2u_42]$
 str3:[l_3u_11,l_3u_12,l_3u_21,l_3u_22,l_3u_31,l_3u_32,l_3u_41,l_3u_42]$
@@ -33,19 +75,19 @@ str5:[l_5u_11,l_5u_12,l_5u_21,l_5u_22,l_5u_31,l_5u_32,l_5u_41,l_5u_42]$
 str6:[l_6u_11,l_6u_12,l_6u_21,l_6u_22,l_6u_31,l_6u_32,l_6u_41,l_6u_42]$
 str7:[l_7u_11,l_7u_12,l_7u_21,l_7u_22,l_7u_31,l_7u_32,l_7u_41,l_7u_42]$
 str8:[l_8u_11,l_8u_12,l_8u_21,l_8u_22,l_8u_31,l_8u_32,l_8u_41,l_8u_42]$
-matrix(str1, str2, str3, str4, str5, str6, str7, str8);
+D:matrix(str1, str2, str3, str4, str5, str6, str7, str8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-determinant(matrix([a(x)/p, bx],[cx/p, a(x)]));
+k_3:0;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ratsimp(%o11);
+ratsimp(p(b_3) * determinant(D));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-l_5u_12 : 1 + k_1 * P(b_1, a_1__1);
+determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
