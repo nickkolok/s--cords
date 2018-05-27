@@ -34,33 +34,33 @@ assume(
 
 /* [wxMaxima: input   start ] */
 /*Теперь вводим функционалы*/
-l_1 (u) := u(b_1)
+l_1 (u) := u(b_1,s)
 ;
-l_2 (u) := p(b_2  ) * at(diff(u(x), x), [x = b_2  ]) + k_2 * u(b_2  )
+l_2 (u) := p(b_2  ) * at(diff(u(x,s), x), [x = b_2  ]) + k_2 * u(b_2,s)
 ;
-l_3 (u) := at(diff(u(x), x), [x = b_3  ])
+l_3 (u) := at(diff(u(x,s), x), [x = b_3  ])
 ;
-l_4 (u) := u(a_1__1) - u(a_1__4)
+l_4 (u) := u(a_1__1,s) - u(a_1__4,s)
 ;
-l_5 (u) := p(a_1__1) * at(diff(u(x), x), [x = a_1__1]) - p(a_1__4) * at(diff(u(x), x), [x = a_1__4]) + k_1 * u(a_1__1)
+l_5 (u) := p(a_1__1) * at(diff(u(x,s), x), [x = a_1__1]) - p(a_1__4) * at(diff(u(x,s), x), [x = a_1__4]) + k_1 * u(a_1__1,s)
 ;
-l_6 (u) := - p(a_2__2) * at(diff(u(x), x), [x = a_2__2]) + k_4 * (u(a_2__2) - u(a_2__4))
+l_6 (u) := - p(a_2__2) * at(diff(u(x,s), x), [x = a_2__2]) + k_4 * (u(a_2__2,s) - u(a_2__4,s))
 ;
-l_7 (u) := - p(a_2__3) * at(diff(u(x), x), [x = a_2__3]) + k_3 * (u(a_2__3) - u(a_2__4))
+l_7 (u) := - p(a_2__3) * at(diff(u(x,s), x), [x = a_2__3]) + k_3 * (u(a_2__3,s) - u(a_2__4,s))
 ;
-l_8 (u) := p(a_2__4) * at(diff(u(x), x), [x = a_2__4]) - p(a_2__3) * at(diff(u(x), x), [x = a_2__3]) - p(a_2__2) * at(diff(u(x), x), [x = a_2__2]);
+l_8 (u) := p(a_2__4) * at(diff(u(x,s), x), [x = a_2__4]) - p(a_2__3) * at(diff(u(x,s), x), [x = a_2__3]) - p(a_2__2) * at(diff(u(x,s), x), [x = a_2__2]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-chi_1(x) := chi(b_1    - 1, a_1__1 + 1, x);
-chi_2(x) := chi(a_2__2 - 1, b_2    + 1, x);
-chi_3(x) := chi(a_2__3 - 1, b_3    + 1, x);
-chi_4(x) := chi(a_1__4 - 1, a_2__4 + 1, x);
+chi_1(x,s) := chi(b_1    - 1, a_1__1 + 1, x);
+chi_2(x,s) := chi(a_2__2 - 1, b_2    + 1, x);
+chi_3(x,s) := chi(a_2__3 - 1, b_3    + 1, x);
+chi_4(x,s) := chi(a_1__4 - 1, a_2__4 + 1, x);
 
-u_12(x) := chi_1(x) * P(b_1   , x);
-u_22(x) := chi_2(x) * P(b_2   , x);
-u_32(x) := chi_3(x) * P(a_2__3, x);
-u_42(x) := chi_4(x) * P(a_2__4, x);
+u_12(x,s) := chi_1(x,s) * P(b_1   , x);
+u_22(x,s) := chi_2(x,s) * P(b_2   , x);
+u_32(x,s) := chi_3(x,s) * P(a_2__3, x);
+u_42(x,s) := chi_4(x,s) * P(a_2__4, x);
 
 w : [
     chi_1,
