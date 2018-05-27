@@ -17,6 +17,12 @@ a_2__2 : 14; b_2    : 15;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+P(x,y) := integrate(1/p(t), t, x, y);
+/*assume(equal(diff(P(x,y),x), -1/p(x)));
+assume(equal(diff(P(x,y),y),  1/p(y)));*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 /*Вводим пробные параметры - x_i гарантировано лежит на i-м ребре*/
 assume(
     b_1    <= x_1, x_1 <= a_1__1,
@@ -77,6 +83,10 @@ D:genmatrix (lambda ([i,j], (l[i])(w[j])), 8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+d: determinant(D);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 l_3(chi_2);
 /* [wxMaxima: input   end   ] */
 
@@ -126,6 +136,26 @@ intG(sin);
 
 /* [wxMaxima: input   start ] */
 intG(h1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(equal(diff(G(x,y),x), g(x,y)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K(x,s) := x - s;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k(x) := K(x,s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(x):= l_1(k);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(1);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
