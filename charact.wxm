@@ -87,7 +87,100 @@ d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+K(x,s) := chi(0,1,s-x)*P(x,s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wx:(genmatrix (lambda ([i,j], (w[j])(x,s)), 1, 8))[1];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+D1:copymatrix(D);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+D1[1][1] : w[1](x,s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+D1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+v:[]; Dbuf:[D,D,D,D,D,D,D,D]$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+
+for i:1 thru 8 do (
+    Dbuf[i]: copymatrix(D),
+    Dbuf[i][i]: wx,
+    vi(y,s):=(at(determinant(Dbuf[i]),[x=y])/d),
+    v[i](x,s):=vi(x,s)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Dbuf;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(v[1](x_1, s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(v[2](x_2, s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+v[1](x_1, s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V: (genmatrix(
+        (
+            lambda (
+                [i,j], (
+                    D_i:copymatrix(D),
+                    D_i[i]:wx,
+                    vi(y,s):=''(at(determinant(D_i),[x=y])),
+                    vi(y,s)
+                )
+            )
+        ), 8
+    ))[1];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V[1](x_1,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V_1(y,s):=(at(determinant(D1),[x=y]))/d;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V_1(10.5,2.5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k(s) := l_1(K);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k(s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k(5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 l_3(chi_2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(chi_1(x,s), x, 2 , 3);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
