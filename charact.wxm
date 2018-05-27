@@ -1,0 +1,45 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+sgn(x) := abs(x)/x;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+hs(x) := (1+abs(x)/x)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chi(a,b,x) := ''(hs(x-a) * hs(b-x));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h1(x):=chi(-1, 2, x)*x;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(0<=x2, x2<=1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(x1<1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h1(x1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+intG(u) := ''integrate(u(x), x, 0, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+intG(sin);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+intG(h1);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
