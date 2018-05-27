@@ -10,6 +10,13 @@ chi(a,b,x) := ''(hs(x-a) * hs(b-x));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+b_1    :  2; a_1__1 :  3;
+a_1__4 :  6; a_2__4 :  7;
+a_2__3 : 10; b_3    : 11;
+a_2__2 : 14; b_2    : 15;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 /*Вводим пробные параметры - x_i гарантировано лежит на i-м ребре*/
 assume(
     b_1    <= x_1, x_1 <= a_1__1,
@@ -21,21 +28,21 @@ assume(
 
 /* [wxMaxima: input   start ] */
 /*Теперь вводим функционалы*/
-l_1 (u) := u(b_1) 
+l_1 (u) := u(b_1)
 ;
-l_2 (u) := p(b_2  ) * at(diff(u(x), x), b_2  ) + k_2 * u(b_2  ) 
+l_2 (u) := p(b_2  ) * at(diff(u(x), x), [x = b_2  ]) + k_2 * u(b_2  )
 ;
-l_3 (u) := at(diff(u(x), x), b_3) 
+l_3 (u) := at(diff(u(x), x), [x = b_3  ])
 ;
-l_4 (u) := u(a_1__1) - u(a_1__4) 
+l_4 (u) := u(a_1__1) - u(a_1__4)
 ;
-l_5 (u) := p(a_1__1) * at(diff(u(x), x), a_1__1) - p(a_1__4) * at(diff(u(x), x), a_1__4) + k_1 * u(a_1__1) 
+l_5 (u) := p(a_1__1) * at(diff(u(x), x), [x = a_1__1]) - p(a_1__4) * at(diff(u(x), x), [x = a_1__4]) + k_1 * u(a_1__1)
 ;
-l_6 (u) := - p(a_2__2) * at(diff(u(x), x), a_2__2) + k_4 * (u(a_2__2) - u(a_2__4)) 
+l_6 (u) := - p(a_2__2) * at(diff(u(x), x), [x = a_2__2]) + k_4 * (u(a_2__2) - u(a_2__4))
 ;
-l_7 (u) := - p(a_2__3) * at(diff(u(x), x), a_2__3) + k_3 * (u(a_2__3) - u(a_2__4)) 
+l_7 (u) := - p(a_2__3) * at(diff(u(x), x), [x = a_2__3]) + k_3 * (u(a_2__3) - u(a_2__4))
 ;
-l_8 (u) := p(a_2__4) * at(diff(u(x), x), a_2__4) - p(a_2__3) * at(diff(u(x), x), a_2__3) - p(a_2__2) * at(diff(u(x), x), a_2__2);
+l_8 (u) := p(a_2__4) * at(diff(u(x), x), [x = a_2__4]) - p(a_2__3) * at(diff(u(x), x), [x = a_2__3]) - p(a_2__2) * at(diff(u(x), x), [x = a_2__2]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -49,7 +56,7 @@ u_22(x) := chi_2(x) * P(b_2   , x);
 u_32(x) := chi_3(x) * P(a_2__3, x);
 u_42(x) := chi_4(x) * P(a_2__4, x);
 
-w = [
+w : [
     chi_1,
     chi_2,
     chi_3,
@@ -62,18 +69,39 @@ w = [
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-l=[l_1, l_2, l_3, l_4, l_5, l_6, l_7, l_8];
+l:[l_1, l_2, l_3, l_4, l_5, l_6, l_7, l_8];
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-b_1    :  2; a_1__1 :  3;
-a_1__4 :  6; a_2__4 :  7;
-a_2__3 : 10; b_3    : 11;
-a_2__4 : 14; b_2    : 15;
+D:genmatrix (lambda ([i,j], (l[i])(w[j])), 8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-l_1(w[2]);
+l_3(chi_2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l_1(chi_2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l0:l[1];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+w0:w[2];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+(l[1])(w[2]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l0(chi_2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+(l[1])(w[2]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
