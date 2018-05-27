@@ -2,27 +2,25 @@
 /* [ Created with wxMaxima version 15.08.2 ] */
 
 /* [wxMaxima: input   start ] */
-sgn(x) := abs(x)/x;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-hs(x) := (1+abs(x)/x)/2;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
+/*Построение характеристической функции отрезка на основе модуля.
+Не самый простой путь, зато можно автоматически дифференцировать! Почти везде*/
+sgn(x) := abs(x)/x $
+hs(x) := (1+abs(x)/x)/2 $
 chi(a,b,x) := ''(hs(x-a) * hs(b-x));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+/*Вводим пробные параметры - x_i гарантировано лежит на i-м ребре*/
+assume(
+    b_1    <= x_1, x_1 <= a_1__1,
+    a_1__4 <= x_4, x_4 <= a_2__4,
+    a_2__3 <= x_3, x_3 <= b_3   ,
+    a_2__2 <= x_2, x_2 <= b_2
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 h1(x):=chi(-1, 2, x)*x;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-assume(0<=x2, x2<=1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-assume(x1<1);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
