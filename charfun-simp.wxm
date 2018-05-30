@@ -1,0 +1,62 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+charfun(x<0) - charfun(-x>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+y(x):=charfun(x<0) - charfun(-x>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+y(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+matchdeclare ([aa,bb], all);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+tellsimp (charfun(aa<bb), charfun((bb)-(aa)>0));
+tellsimp (charfun(aa<=0), charfun(-(aa)>=0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+y(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(x<0) - charfun(-x>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(x<0) + charfun(-x<0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+matchdeclare (not0, lambda ([x], x # 0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+tellsimp (charfun(aa>not0), charfun(aa-not0>0));;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(3-s>0)-charfun(s<3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(3>s)-charfun(s<3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load(absimp);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("./charfun-ineq-simp.mac");
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

@@ -1,0 +1,8 @@
+ttyoff: nolabels: true $
+matchdeclare ([aa,bb], all)$
+tellsimp (charfun(aa< bb), charfun((bb)-(aa)> 0))$
+tellsimp (charfun(aa<=bb), charfun((bb)-(aa)>=0))$
+matchdeclare (not0, lambda ([x], x # 0))$
+tellsimp (charfun(aa> not0), charfun(aa-not0> 0))$
+tellsimp (charfun(aa>=not0), charfun(aa-not0>=0))$
+ttyoff: nolabels: false $
