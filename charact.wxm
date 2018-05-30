@@ -2,15 +2,6 @@
 /* [ Created with wxMaxima version 15.08.2 ] */
 
 /* [wxMaxima: input   start ] */
-/*Построение характеристической функции отрезка на основе модуля.
-Не самый простой путь, зато можно автоматически дифференцировать! Почти везде*/
-sgn(x) := abs(x)/x $
-hs(x) := (1+abs(x)/x)/2 $
-chi(a,b,x) := ''(hs(x-a) * hs(b-x));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*chi(a,b,x) := charfun (x>=a and x<=b);*/
 chi(a,b,x) := charfun (x>=a) * charfun(x<=b);
 gradef(charfun(y), 0);
 /* [wxMaxima: input   end   ] */
@@ -103,10 +94,6 @@ d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*wx:(genmatrix (lambda ([i,j], (w[j])(x,s)), 1, 8))[1];*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 v:[]; Dbuf:[D,D,D,D,D,D,D,D]$
 /* [wxMaxima: input   end   ] */
 
@@ -116,9 +103,7 @@ for i:1 thru 8 do (
     for j:1 thru 8 do(
         Dbuf[i][i][j]:w[j](x,s)
     ),
-    /*Dbuf[i][i]: wx,*/
     v[i](y):=(at(determinant(Dbuf[i]),[x=y,s=0]))
-/*    v[i](x):=at(psi,[y=x])/d*/
 );
 /* [wxMaxima: input   end   ] */
 
@@ -138,10 +123,6 @@ ratsimp(ev(v[1](5/2)));
 (-k_2*k_3*k_4+k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,5/2)-k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,3))*integrate(sin(%pi*t)+1,t,14,15)+
 (-k_2*k_3*k_4+k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,5/2)-k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,3))*integrate(sin(%pi*t)+1,t,6,7)+((-k_2-k_1)*k_3*k_4-k_1*k_2*k_3)*
 integrate(sin(%pi*t)+1,t,2,3)+(k_1*k_2*k_3+(k_2+k_1)*k_3*k_4)*integrate(sin(%pi*t)+1,t,2,5/2)-k_3*k_4-k_2*k_3;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-integrate(sin(t)+1,t,2,3);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -168,10 +149,6 @@ ratsimp(integrate(rr, s_1, 2, 3));
 
 /* [wxMaxima: input   start ] */
 G(x,s);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-load ("absimp");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -277,53 +254,6 @@ assume(equal(diff(chr(x,s),x),0));
 /* [wxMaxima: input   start ] */
 at(l_3(chr), '(diff(chr(x,s),x)=0));
 /* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-M:matrix([sin(x), cos(x)],[1, 2]);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-M[1][2]:w[3](x,s);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-determinant(M);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fm(x):=determinant(M);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fm(1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fmm(y) := at(determinant(M), [x=y, s=0]);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fmm(1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-v[2](0);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-fm(1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-diff(fm(x), x);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-expr:charfun(x>2);
-assume(x>3);
-integrate(expr,x, 3, 4);
-/* [wxMaxima: input   end   ] */
-
 
 /* Maxima can't load/batch files which end with a comment! */
 "Created with wxMaxima"$
