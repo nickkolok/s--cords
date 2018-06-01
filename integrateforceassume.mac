@@ -1,0 +1,21 @@
+ttyoff: nolabels: true $
+
+integrate_force_assume_transform(f,x,a,b):=(oldcontext:context,
+    context:supcontext(),
+    if(a<b) then assume(x>a,x<b) else if (b<a) then assume(x>b,x<a),
+    result:ev(integrate(f,x,a,b)),
+    context:oldcontext,
+    result
+)$
+
+oldsimp:simp$
+simp:false$
+matchdeclare ([aa,bb,xx,cc,dd], all)$
+defrule(integrals_force_assume1, 'integrate(aa,xx,cc,dd), 'integrate_force_assume_transform(aa,xx,cc,dd))$
+defrule(integrals_force_assume2, 'integrate_force_assume_transform(aa,xx,cc,dd), ev(integrate_force_assume_transform(aa,xx,cc,dd)))$
+simp:oldsimp$
+
+integrateforceassume(expr):=applyb1(apply1(expr,integrals_force_assume1),integrals_force_assume2)$
+
+
+ttyoff: nolabels: false $
