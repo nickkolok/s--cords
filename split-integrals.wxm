@@ -6,69 +6,91 @@ load("./charfun-ineq-simp.mac");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-p: charfun(x-s>0)*charfun(s<1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-q:charfun(x>0) + p;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-integrate(q, x, 2, 4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*
-integrate(
-    (
-        
-        charfun(1-s>0)*charfun(x-s>0)
+splitint(expr) := block([s,x,a,b],
+    if atom(expr) then expr else
+    if(op(expr)#op('integrate(a(b),b))) then expr else (
+        s:part(expr,1),
+        if length(s) < 2 or (length(s)=2 and (part(s,1) = 0 or part(s,2)=0))then expr else
+        if(length(expr)>2) then ( /*definite*/
+            x: part(expr,2),
+            a: part(expr,3),
+            b: part(expr,4),
+            if(op(s)#"+") then expr else (
+                'integrate(rest(s),x,a,b)
+                +
+                'integrate_splitted(first  (s   ),x,a,b)
+            )
+        ) else expr
     )
-    +(block[y], assume(x>=2), y: charfun(x>0), forget(x>=2), y)
-    ,x,2,4);
-*/
+);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-integrate(q,x,2,4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-integrate(charfun(x>0) + p,x,2,4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-matchdeclare ([aa,bb,xx,cc,dd], all);
-
-matchdeclare ([aa,bb], lambda ([x], x # 0));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-simp:false;
-defmatch(match, 'integrate((aa)+(bb),xx,cc,dd));
-simp:true;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-''integrate(charfun(x>0) + p,x,2,4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-match(integrate(charfun(x>0) + p,x,2,4));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-match('integrate((y)+(yy),x,2,4));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-simp:false;
-'integrate(y+yy,x,2,4);
+splitint(1+h);
+splitint(1);
+splitint('integrate(f(x),x,r,t));
+splitint(integrate(f(x)+sin(x),x,r,t));
+splitint(integrate(f(x)+sin(x)-tan(x)+cos(x),x,r,t));
+splitint(integrate(f(x)+g(x),x));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 oldsimp:simp;
 simp:false;
+matchdeclare ([aa,bb,xx,cc,dd], all);
+defrule(splitintegrals, 'integrate(aa,xx,cc,dd), splitint('integrate(aa,xx,cc,dd)));
+defrule(splitintegrals2, integrate_splitted(aa,xx,cc,dd), integrate(aa,xx,cc,dd));
+simp:oldsimp;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expandintofsum(expr):=ev(apply1(expr,splitintegrals,splitintegrals2),nouns);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d:applyb1('integrate((charfun(1-s>0)*charfun(x-s>0))+(charfun(x>0)),x,2,4),splitintegrals);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d1:ev(d,nouns);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+jjj:integrate(charfun(x>0)+charfun(s-x<0),x,2,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+splitint(jjj);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expandintofsum(jjj);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+jjj2:integrate(charfun(x>0)+charfun(s-x<0)+sin(x) - cos(u+x)+p(x),x,2,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expandintofsum(jjj2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expandintofsum(jjj2+jjj);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expandintofsum(integrate(gh(x),x,7,8));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+oldsimp:simp;
+simp:false;
+matchdeclare ([aa,bb,xx,cc,dd], all);
 defrule(splitintegrals, 'integrate(aa+bb,xx,cc,dd), 'integrate(aa,xx,cc,dd)+'integrate(bb,xx,cc,dd));
 simp:oldsimp;
 /* [wxMaxima: input   end   ] */
@@ -94,14 +116,6 @@ applyb1('integrate((charfun(1-s>0)*charfun(x-s>0))+(charfun(x>0)),x,2,4),splitin
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-simp : false;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-simp:true;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 simp:false;
 matchdeclare ([aa,bb,xx,cc,dd], all);
 tellsimpafter('integrate(aa+bb,xx,cc,dd), integrate(aa,xx,cc,dd)+integrate(bb,xx,cc,dd));
@@ -122,7 +136,7 @@ expand(integrate(charfun(x>0) + charfun(x-s>0),x,2,4));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-op(part(%o38,1));
+op(part(%o1,1));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -135,71 +149,6 @@ q:(a+b+c-sin(x)*2*cos(p+2));
 
 /* [wxMaxima: input   start ] */
 length(q);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-splitint(expr) := block([s,x,a,b],
-    if atom(expr) then expr else
-    if(op(expr)#op('integrate(a(b),b))) then expr else (
-        s:part(expr,1),
-        if length(s) < 2 then expr else
-        if(length(expr)>2) then ( /*definite*/
-            x: part(expr,2),
-            a: part(expr,3),
-            b: part(expr,4),
-            if(op(s)#"+") then expr else (
-                'integrate(rest(s),x,a,b)
-                +
-                'integrate(first  (s   ),x,a,b)
-            )
-        ) else expr
-    )
-);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-splitint(1+h);
-splitint(1);
-splitint('integrate(f(x),x,r,t));
-splitint(integrate(f(x)+sin(x),x,r,t));
-splitint(integrate(f(x)+sin(x)-tan(x)+cos(x),x,r,t));
-splitint(integrate(f(x)+g(x),x));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-oldsimp:simp;
-simp:false;
-matchdeclare ([aa,bb,xx,cc,dd], all);
-defrule(splitintegrals, 'integrate(aa,xx,cc,dd), ev(splitint('integrate(aa,xx,cc,dd)),nouns));
-simp:oldsimp;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-expandintsums(expr):=ev(apply2(expr,splitintegrals),nouns);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-d:applyb1('integrate((charfun(1-s>0)*charfun(x-s>0))+(charfun(x>0)),x,2,4),splitintegrals);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-d;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-d1:ev(d,nouns);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-jjj:integrate(charfun(x>0)+charfun(s-x<0),x,2,4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-splitint(jjj);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-expandintsums(jjj);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
