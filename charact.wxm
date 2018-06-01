@@ -168,6 +168,68 @@ theU1(y);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+load("./integrateforceassume.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(integrateforceassume(theU1(yy)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU2(yy):=ev(ratsimp(integrateforceassume(theU1(yy))));
+theU2(x);
+theU2(xx);
+theU2(5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("./charfuntounitstep.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU3(x):=charfuntounitstep(theU2(x));
+theU3(y);
+theU3(5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+at(theU3(y),[y=5/2]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+unitstep(x):=(abs(x)+x)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(xx):=ev(integrate(unit_step(-xx+s+1)*unit_step(xx-s),s,14,15));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU1(xx);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU2(x) := ev(ratsimp(at(integrateforceassume(theU1(y)),[y=x])));
+theU2(xx);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU3(y):= at(theU2(xx),[xx=y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU3(5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 q1:theU1(5/2);
 /* [wxMaxima: input   end   ] */
 
@@ -201,6 +263,18 @@ q4:theU2(5/2);
 
 /* [wxMaxima: input   start ] */
 ev(q4, nouns);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(integrateforceassume(q4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/***/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate((assume(s>2,s<3),c:charfun(s-3/2>=0) * charfun(5/2-s>=0), forget(s>2,s<3),c),s,2,3);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -249,7 +323,11 @@ theUs(5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-wxplot2d([theU(x)], [x,2,3], [y,-5,5],
+theU3(2), numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([theU3(x)], [x,2,3], [y,-10000,10000],
  [nticks,3])$
 /* [wxMaxima: input   end   ] */
 
