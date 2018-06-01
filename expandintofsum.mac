@@ -1,0 +1,31 @@
+ttyoff: nolabels: true $
+
+splitint(expr) := block([s,x,a,b],
+    if atom(expr) then expr else
+    if(op(expr)#op('integrate(a(b),b))) then expr else (
+        s:part(expr,1),
+        if length(s) < 2 or (length(s)=2 and (part(s,1) = 0 or part(s,2)=0))then expr else
+        if(length(expr)>2) then ( /*definite*/
+            x: part(expr,2),
+            a: part(expr,3),
+            b: part(expr,4),
+            if(op(s)#"+") then expr else (
+                'integrate(rest(s),x,a,b)
+                +
+                'integrate_splitted(first  (s   ),x,a,b)
+            )
+        ) else expr
+    )
+)$
+
+oldsimp:simp$
+simp:false$
+matchdeclare ([aa,bb,xx,cc,dd], all)$
+defrule(splitintegrals, 'integrate(aa,xx,cc,dd), splitint('integrate(aa,xx,cc,dd)))$
+defrule(splitintegrals2, integrate_splitted(aa,xx,cc,dd), integrate(aa,xx,cc,dd))$
+simp:oldsimp$
+
+expandintofsum(expr):=ev(apply1(expr,splitintegrals,splitintegrals2),nouns)$
+
+
+ttyoff: nolabels: false $
