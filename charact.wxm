@@ -2,6 +2,10 @@
 /* [ Created with wxMaxima version 15.08.2 ] */
 
 /* [wxMaxima: input   start ] */
+load("./charfun-ineq-simp.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 chi(a,b,x) := charfun (x>=a) * charfun(x<=b);
 gradef(charfun(y), 0);
 /* [wxMaxima: input   end   ] */
@@ -116,31 +120,59 @@ collectterms(v[2](y), charfun);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ratsimp(ev(v[1](5/2)));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-(-k_2*k_3*k_4+k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,5/2)-k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,3))*integrate(sin(%pi*t)+1,t,14,15)+
-(-k_2*k_3*k_4+k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,5/2)-k_1*k_2*k_3*k_4*integrate(sin(%pi*t)+1,t,2,3))*integrate(sin(%pi*t)+1,t,6,7)+((-k_2-k_1)*k_3*k_4-k_1*k_2*k_3)*
-integrate(sin(%pi*t)+1,t,2,3)+(k_1*k_2*k_3+(k_2+k_1)*k_3*k_4)*integrate(sin(%pi*t)+1,t,2,5/2)-k_3*k_4-k_2*k_3;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 /*K(x,s):=chi(0,1,x-s);*/
-K(x,s):=charfun(x-s>0)*charfun(x-s<1);
+K(x,s):=charfun(x-s>=0)*charfun(x-s<=1);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x,s):=K(x,s) - sum((l[i](K))*v[i](x),i,1,8);
+lK:[0,0,0,0,0,0,0,0]$
+for i:1 thru 8 do (lK[i]:l[i](K))$
+lK;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+slv(x,s):=- sum((l[i](K))*v[i](x),i,1,8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x,s):=K(x,s) +slv(x,s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(x_1 < s_1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x_1, s_1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x_1, s_4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+''integrate(slv(x,s)*f(s), s, 2, 3);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-ratsimp(G(x,s));
+G(x,s);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-rr:ratsimp(G(x_1, s_1));
+collectterms(expand(G(x,s)),charfun);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x_1, s_1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(G(x,s),s,2,3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("./expandintofsum.mac");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -152,7 +184,7 @@ G(x,s);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ev(integrate(G(x,s),s,2,3));
+ev(integrate(G(x,s),s,2,3),nouns);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -180,55 +212,20 @@ l_8(K);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-intG(u) := ''integrate(u(x), x, 0, 1);
+intG(u) := 
+    integrate(u, s, b_1   , a_1__1) +
+    integrate(u, s, a_1__4, a_2__4) +
+    integrate(u, s, a_2__3, b_3   ) +
+    integrate(u, s, a_2__2, b_2   ) +
+0;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-intG(sin);
+include("./split-integrals.wxm");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-intG(h1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-l_7(K);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-h1(x,s):=ratsimp(l_1(K)*v[1](x));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-h11(x):=ratsimp(at(l_1(K)*v[1](x), [s=5/2]));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ratsimp(expand(h11(x_1)));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ratsimp(h11(x));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-integrate(h11(x),x,2,3);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-h1(x,s);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-integrate(h1(x,s),s,14,15);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-G(x,s):=K(x,s)+l_1(K) * v[1](x);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-G(x,s);
+intG(sin(x+s));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -236,23 +233,55 @@ f(s):=1;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ratsimp(G(x_1, s_2));
+p(t):=1/(2+sin(%pi * t));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-intergate(G(x_1,s_1)*f(s_1), s_1, 2, 3);
+theU(y) := at(intG(G(x,s)*f(s)),[x=y]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-chr(x,s) := if x> 0 then 1 else 0;
+theU1(y, r) := at(integrate(slv(x,s_1)*f(s_1), s_1, 2, 3),[x=y, s=r]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-assume(equal(diff(chr(x,s),x),0));
+theU1(y, r);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-at(l_3(chr), '(diff(chr(x,s),x)=0));
+theU1x(y) := theU1(y,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k_1:1$ k_2:2$ k_3:3$ k_4:4$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(ratsimp(ev(theU1(5/2, 1))));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+48*integrate(sin(%pi*t)+2,t,2,5/2)*integrate(sin(%pi*t)+2,t,14,15)+48*integrate(sin(%pi*t)+2,t,2,5/2)*integrate(sin(%pi*t)+2,t,6,7)+84*integrate(sin(%pi*t)+2,t,2,5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(sin(%pi*t)+2,t,2,5/2)*integrate(sin(%pi*t)+2,t,14,15)+48*integrate(sin(%pi*t)+2,t,2,5/2)*integrate(sin(%pi*t)+2,t,6,7)+84*integrate(sin(%pi*t)+2,t,2,5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp((49*(1+%pi)*(2+2*%pi))/%pi^2+(84*(1+%pi))/%pi);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU(9/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(slv(x,s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([theU1x(x)], [x,2,3]);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
