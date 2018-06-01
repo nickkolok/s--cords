@@ -12,7 +12,7 @@ splitint(expr) := block([s,x,a,b],
             if(op(s)#"+") then expr else (
                 'integrate(rest(s),x,a,b)
                 +
-                'integrate_splitted(first  (s   ),x,a,b)
+                integrate_splitted(first  (s   ),x,a,b)
             )
         ) else expr
     )
@@ -25,7 +25,7 @@ defrule(splitintegrals, 'integrate(aa,xx,cc,dd), splitint('integrate(aa,xx,cc,dd
 defrule(splitintegrals2, integrate_splitted(aa,xx,cc,dd), integrate(aa,xx,cc,dd))$
 simp:oldsimp$
 
-expandintofsum(expr):=ev(apply1(expr,splitintegrals,splitintegrals2),nouns)$
+expandintofsum(expr):=applyb1(apply1(expr,splitintegrals),splitintegrals2)$
 
 
 ttyoff: nolabels: false $
