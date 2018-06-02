@@ -1,0 +1,35 @@
+ttyoff: nolabels: true $
+
+
+oldsimp:simp$
+simp:false$
+matchdeclare ([
+	charfun_to_unitstep_transform_aa
+], all)$
+
+defrule(
+	charfun_to_unitstep_1,
+	charfun(
+		charfun_to_unitstep_transform_aa
+		>=
+		0
+	),
+	unit_step(charfun_to_unitstep_transform_aa)
+)$
+
+defrule(
+	charfun_to_unitstep_2,
+	charfun(
+		charfun_to_unitstep_transform_aa
+		>
+		0
+	),
+	unit_step(charfun_to_unitstep_transform_aa)
+)$
+
+simp:oldsimp$
+
+charfuntounitstep(expr):= apply1(expr,charfun_to_unitstep_1,charfun_to_unitstep_2)$
+
+
+ttyoff: nolabels: false $
