@@ -63,6 +63,7 @@ l_8 (u) := p(a_2__4) * at(diff(u(x,s), x), [x = a_2__4]) - p(a_2__3) * at(diff(u
 
 /* [wxMaxima: input   start ] */
 /*Костыль отладки: прибиваем все концы*/
+/*
 l_1 (u) := u(b_1   ,s);
 l_2 (u) := u(a_1__1,s);
 l_3 (u) := u(a_1__4,s);
@@ -71,6 +72,7 @@ l_5 (u) := u(a_2__2,s);
 l_6 (u) := u(a_2__3,s);
 l_7 (u) := u(b_2   ,s);
 l_8 (u) := u(b_3   ,s);
+*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -171,8 +173,8 @@ G(x,s):=ev(K(x,s) + slv(x,s),nouns)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(5/2,5/2+1/10);
-G(5/2+1/10,5/2);
+/*G(5/2,5/2+1/10);
+G(5/2+1/10,5/2);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -218,10 +220,11 @@ intG(u) :=
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-f(s):=chi_1(s,0)$
+f(s):=(s-8)*(1+sin(4*%pi*s))$
+/*f(s):=chi_1(s,0)$*/
 /*f(s):=1+s^2/100$*/
 /*p(t):=1/(2+sin(%pi * t))$*/
-p(t):=1$
+p(t):=2$
 k_1:0 $ k_2:0 $ k_3: 1$ k_4: 1$
 /* [wxMaxima: input   end   ] */
 
@@ -275,7 +278,7 @@ theU7(y)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-count_of_points:10$
+count_of_points:5$
 xs1:makelist(b_1+(a_1__1-b_1)/count_of_points*i, i, 0, count_of_points)$
 ys1:makelist(ratsimp(theU7(xs1[i+1])),i,0,count_of_points)$
 xs4:makelist(a_1__4+(a_2__4-a_1__4)/count_of_points*i, i, 0, count_of_points)$
@@ -291,8 +294,8 @@ ys:makelist(ratsimp(theU7(xs[i+1])),i,0,count_of_points)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU7(a_1__1),numer;
-theU7(a_1__4),numer;
+/*theU7(a_1__1),numer;
+theU7(a_1__4),numer;*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -300,6 +303,12 @@ wxplot2d([discrete,xs1,ys1]);
 wxplot2d([discrete,xs4,ys4]);
 wxplot2d([discrete,xs2,ys2]);
 wxplot2d([discrete,xs3,ys3]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*xs:makelist(17/count_of_points*i, i, 0, count_of_points)$
+ys:makelist(ratsimp(theU7(xs[i+1])),i,0,count_of_points)$
+wxplot2d([discrete,xs,ys]);*/;
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
