@@ -62,6 +62,18 @@ l_8 (u) := p(a_2__4) * at(diff(u(x,s), x), [x = a_2__4]) - p(a_2__3) * at(diff(u
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+/*Костыль отладки: прибиваем все концы*/
+l_1 (u) := u(b_1   ,s);
+l_2 (u) := u(a_1__1,s);
+l_3 (u) := u(a_1__4,s);
+l_4 (u) := u(a_2__4,s);
+l_5 (u) := u(a_2__2,s);
+l_6 (u) := u(a_2__3,s);
+l_7 (u) := u(b_2   ,s);
+l_8 (u) := u(b_3   ,s);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 chi_1(x,s00) := chi(b_1    - 1, a_1__1 + 1, x)$
 chi_2(x,s00) := chi(a_2__2 - 1, b_2    + 1, x)$
 chi_3(x,s00) := chi(a_2__3 - 1, b_3    + 1, x)$
@@ -89,10 +101,9 @@ w : [
 l:[l_1, l_2, l_3, l_4, l_5, l_6, l_7, l_8]$
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 D:genmatrix (lambda ([i,j], ev((l[i])(w[j]))), 8)$
-d: determinant(D)$
+d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: hide output   ] */
@@ -101,27 +112,40 @@ v:[]$ Dbuf:[D,D,D,D,D,D,D,D]$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+hv:makelist(0,k,1,8);
+v:makelist(0,k,1,8);
 for i:1 thru 8 do (
     Dbuf[i]: copymatrix(D),
     for j:1 thru 8 do(
         Dbuf[i][i][j]:w[j](x,s)
     ),
-    v[i](y):=(at(determinant(Dbuf[i]),[x=y,s=0]))
+    hv[i]:determinant(Dbuf[i]),
+    v[i](y):=(at(hv[i],[x=y,s=0]))
 );
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-collectterms(v[1](y), charfun);
+collectterms(v[1](x), charfun);
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 collectterms(v[2](y), charfun);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-K(x,s):=ev(sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s));
+collectterms(v[3](y), charfun);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+collectterms(v[4](y), charfun);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K(x,s):=-ev(sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K(x,s);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -131,16 +155,24 @@ lK;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-slv(x,s):=- sum((l[i](K))*v[i](x),i,1,8);
+slv(x,s):= sum((l[i](K))*v[i](x),i,1,8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x,s):=ev(K(x,s) +slv(x,s),nouns)$
+slv(x,s);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*G(5/2,5/2+1/10);
-G(5/2+1/10,5/2);*/;
+slv(x_1,s_1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x,s):=ev(K(x,s) + slv(x,s),nouns)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(5/2,5/2+1/10);
+G(5/2+1/10,5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -186,11 +218,11 @@ intG(u) :=
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-f(s):=1$
+f(s):=chi_1(s,0)$
 /*f(s):=1+s^2/100$*/
 /*p(t):=1/(2+sin(%pi * t))$*/
 p(t):=1$
-k_1:0 $ k_2:0 $ k_3: 1$ k_4: 4$
+k_1:0 $ k_2:0 $ k_3: 1$ k_4: 1$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -202,7 +234,7 @@ Gf(y,st):=ev(at(h,[x=y,s=st]))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*Gf(y,t);*/;
+Gf(y,t);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
