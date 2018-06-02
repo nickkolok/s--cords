@@ -91,6 +91,10 @@ d2: ratsimp(d*p(b_3)/k_3);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+d3:collectterms(collectterms(expand(d2), k_1, k_4, P(b_1,a_1__1)), k_2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 ratsimp(ev(-d2, k_2 = 0));
 /* [wxMaxima: input   end   ] */
 
@@ -100,6 +104,242 @@ ratsimp(ev(-d2, k_4 = 0));
 
 /* [wxMaxima: input   start ] */
 ratsimp(ev(-d2, k_1 = 0));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(u) := u(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(sin);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(cos);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f1(x):= if x < 1 then 2 else 5;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(f1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(u) := ev(diff(u(x), x), x=0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(sin);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x) := diff(u(x),x,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x) := sin(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x):= ''(diff(f(x), x));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(u) := ev(''(diff(u(x), x)), x = 0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(x) = sin(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(h);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(u) := block([v], v(x):= ''(diff(u(x), x)), 0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(sin);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(u) := block([u:u,v,y], v: diff(u(x), x), y: at(v,[x=0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x) := if x<1 then (x+1)^2 else 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(f);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(l9(f));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x) := abs(x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(f);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=abs(x+2)*abs(x+1)/(x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(f);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x) := sign (x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sgn(x) := abs(x)/x;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sgn(-1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+hs(x) := (1+abs(x)/x)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+hs(1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+hs(-1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chi(a,b) :=  block([a:a,b:b,v,y,t], v: hs(t-a)*hs(t-x), y: at(v,[t=x]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chi(-1,1)(1/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chi2(a,b,x) := hs(x-a) * hs(b-x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+m(x) := chi2(0,1,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+m(1/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+m(-2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+m(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x) := ''(hs(x-1)*hs(-1-x) * x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diff(g(x), x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+at(diff(g(x),x),[x=0]);;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x) := 'x;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l9(g);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(u) := at(diff(u(x), x),[x=0]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(exp);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g: exp;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(g);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x) := exp(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(g);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(x) := x*hs(x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(h);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+chi2(a,b,x) := hs(x-a) * hs(b-x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h2(x) := chi2(-1, 1, x)*x;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(h2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+P(x) = integrate(p(x),x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+P(x):=integrate(p(t), t, -1, x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(P);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
