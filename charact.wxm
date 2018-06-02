@@ -108,6 +108,10 @@ D:genmatrix (lambda ([i,j], ev((l[i])(w[j]))), 8)$
 d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: input   start ] */
+/*ev(d);*/;
+/* [wxMaxima: input   end   ] */
+
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 v:[]$ Dbuf:[D,D,D,D,D,D,D,D]$
@@ -121,7 +125,7 @@ for i:1 thru 8 do (
     for j:1 thru 8 do(
         Dbuf[i][i][j]:w[j](x,s)
     ),
-    hv[i]:determinant(Dbuf[i]),
+    hv[i]:determinant(Dbuf[i])/d,
     v[i](y):=(at(hv[i],[x=y,s=0]))
 );
 /* [wxMaxima: input   end   ] */
@@ -169,12 +173,17 @@ slv(x_1,s_1);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x,s):=ev(K(x,s) + slv(x,s),nouns)$
+G(x,s):=ev(K(x,s) - slv(x,s),nouns)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 /*G(5/2,5/2+1/10);
 G(5/2+1/10,5/2);*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+at(G(x,s),[x=5/2,s=5/2+1/10]);
+at(G(x,s),[x=5/2+1/10,s=5/2]);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -184,6 +193,10 @@ G(13/2+1/10,13/2);*/;
 
 /* [wxMaxima: input   start ] */
 G(x_1,s_1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+K(x_1,s_1);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
