@@ -131,11 +131,11 @@ slv(x,s):=- sum((l[i](K))*v[i](x),i,1,8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x,s):=ev(K(x,s) +slv(x,s),nouns);
+G(x,s):=ev(K(x,s) +slv(x,s),nouns)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x,s);
+G(x,s)$
 /* [wxMaxima: input   end   ] */
 
 
@@ -149,21 +149,22 @@ intG(u) :=
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-f(s):=1+s^2/100$
+f(s):=0$
+/*f(s):=1+s^2/100$*/
 p(t):=1/(2+sin(%pi * t))$
 k_1:1 $ k_2:2 $ k_3: 3$ k_4: 4$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-h:ev(G(x,s)*f(s));
+h:ev(G(x,s)*f(s))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-Gf(y,t):=ev(at(h,[x=y,s=t]));
+Gf(y,t):=ev(at(h,[x=y,s=t]))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-Gf(y,t);
+/*Gf(y,t);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
