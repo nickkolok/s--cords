@@ -3,6 +3,8 @@
 
 /* [wxMaxima: input   start ] */
 load("./charfun-ineq-simp.mac");
+load("./integrateforceassume.mac");
+load("./intcfsplit.mac");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -59,15 +61,15 @@ l_8 (u) := p(a_2__4) * at(diff(u(x,s), x), [x = a_2__4]) - p(a_2__3) * at(diff(u
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-chi_1(x,s) := chi(b_1    - 1, a_1__1 + 1, x)$
-chi_2(x,s) := chi(a_2__2 - 1, b_2    + 1, x)$
-chi_3(x,s) := chi(a_2__3 - 1, b_3    + 1, x)$
-chi_4(x,s) := chi(a_1__4 - 1, a_2__4 + 1, x)$
+chi_1(x,s00) := chi(b_1    - 1, a_1__1 + 1, x)$
+chi_2(x,s00) := chi(a_2__2 - 1, b_2    + 1, x)$
+chi_3(x,s00) := chi(a_2__3 - 1, b_3    + 1, x)$
+chi_4(x,s00) := chi(a_1__4 - 1, a_2__4 + 1, x)$
 
-u_12(x,s) := chi_1(x,s) * P(b_1   , x)$
-u_22(x,s) := chi_2(x,s) * P(b_2   , x)$
-u_32(x,s) := chi_3(x,s) * P(a_2__3, x)$
-u_42(x,s) := chi_4(x,s) * P(a_2__4, x)$
+u_12(x,s00) := chi_1(x,s00) * P(b_1   , x)$
+u_22(x,s00) := chi_2(x,s00) * P(b_2   , x)$
+u_32(x,s00) := chi_3(x,s00) * P(a_2__3, x)$
+u_42(x,s00) := chi_4(x,s00) * P(a_2__4, x)$
 
 w : [
     chi_1,
@@ -114,7 +116,7 @@ collectterms(v[2](y), charfun);
 
 /* [wxMaxima: input   start ] */
 /*K(x,s):=chi(0,1,x-s);*/
-K(x,s):=charfun(x-s>=0)*charfun(x-s<=1);
+K(x,s):=ev(sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -149,32 +151,74 @@ intG(u) :=
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-f(s):=1$
+f(s):=1+s^2/100$
 p(t):=1/(2+sin(%pi * t))$
 k_1:1 $ k_2:2 $ k_3: 3$ k_4: 4$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU(y) := at(intG(G(x,s)*f(s)),[x=y]);
+h:ev(G(x,s)*f(s));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU(5/2);
+Gf(y,t):=ev(at(h,[x=y,s=t]));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU1(y) := ratsimp(at(expandintofsum(intG(G(x,s)*f(s))),[x=y]));
+Gf(y,t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h2:integrateforceassume(intG(Gf(x,s)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h3:ratsimp(h2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h4:expandintofsum(h3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h5:ratsimp(h4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h6:intcfsplit(h5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU6(y):=at(h6,[x=y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU6(yx);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+theU1(y) := ratsimp(at(expandintofsum(),[x=y]));
 theU1(y);
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-load("./integrateforceassume.mac");
+theU1(3);
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-ratsimp(integrateforceassume(theU1(yy)));
+ev(%);
 /* [wxMaxima: input   end   ] */
 
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+integrateforceassume(%o129);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 theU2(yy):=ev(ratsimp(integrateforceassume(theU1(yy))));
 theU2(x);
@@ -183,21 +227,49 @@ theU2(5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-load("./charfuntounitstep.mac");
+load("intcfsplit.mac");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU3(x):=charfuntounitstep(theU2(x));
-theU3(y);
+theU3(yy):=ev(ratsimp(intcfsplit(expandintofsum(theU2(yy)))));
+theU3(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 theU3(5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-at(theU3(y),[y=5/2]);
+integrateforceassume(theU3(5/2));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-wxplot2d([theU3(x)], [x,2,3], [y,-10000,10000],
+theU4(x):=ev(integrateforceassume(ev(at(theU3(y),[y=x]))));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+at(theU3(y),[y=x]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+theU4(5/2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+q:integrateforceassume(at(theU3(y),[y=5/2]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(integrate(unit_step(5/2-s),s,2,3),nouns);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([theU6(x)], [x,2,3], [y,-10000,10000],
  [nticks,3])$
 /* [wxMaxima: input   end   ] */
 
