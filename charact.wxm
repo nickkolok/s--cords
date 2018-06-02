@@ -5,18 +5,19 @@
 load("./charfun-ineq-simp.mac");
 load("./integrateforceassume.mac");
 load("./intcfsplit.mac");
+load("./expandintofsum.mac");
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-chi(a,b,x) := charfun (x>=a) * charfun(x<=b);
-gradef(charfun(y), 0);
+chi(a,b,x) := charfun (x>=a) * charfun(x<=b)$
+gradef(charfun(y), 0)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-b_1    :  2; a_1__1 :  3;
-a_1__4 :  6; a_2__4 :  7;
-a_2__3 : 10; b_3    : 11;
-a_2__2 : 14; b_2    : 15;
+b_1    :  2$ a_1__1 :  3$
+a_1__4 :  6$ a_2__4 :  7$
+a_2__3 : 10$ b_3    : 11$
+a_2__2 : 14$ b_2    : 15$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -137,9 +138,6 @@ G(x,s):=ev(K(x,s) +slv(x,s),nouns);
 G(x,s);
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: input   start ] */
-load("./expandintofsum.mac");
-/* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
 intG(u) := 
@@ -196,81 +194,49 @@ theU6(y):=at(h6,[x=y]);
 theU6(yx);
 /* [wxMaxima: input   end   ] */
 
-/* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
-theU1(y) := ratsimp(at(expandintofsum(),[x=y]));
-theU1(y);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-theU1(3);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-ev(%);
-/* [wxMaxima: input   end   ] */
-
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-integrateforceassume(%o129);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-theU2(yy):=ev(ratsimp(integrateforceassume(theU1(yy))));
-theU2(x);
-theU2(xx);
-theU2(5/2);
+theU6(5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-load("intcfsplit.mac");
+''ev(theU6(5/2),nouns);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU3(yy):=ev(ratsimp(intcfsplit(expandintofsum(theU2(yy)))));
-theU3(x);
+theU7(y):=integrateforceassume(at(h6,x=y));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU3(5/2);
+theU7(y)
+/*theU7(x):= at(integrateforceassume(ev(theU6(y),nouns)),[y=x]);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-integrateforceassume(theU3(5/2));
+theU6(5/2);
+theU7(5/2);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU4(x):=ev(integrateforceassume(ev(at(theU3(y),[y=x]))));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-at(theU3(y),[y=x]);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-theU4(5/2);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-q:integrateforceassume(at(theU3(y),[y=5/2]));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ev(q);
+count_of_points:10$
+xs1:makelist(b_1+(a_1__1-b_1)/count_of_points*i, i, 0, count_of_points)$
+ys1:makelist(ratsimp(theU7(xs1[i+1])),i,0,count_of_points)$
+xs4:makelist(a_1__4+(a_2__4-a_1__4)/count_of_points*i, i, 0, count_of_points)$
+ys4:makelist(ratsimp(theU7(xs4[i+1])),i,0,count_of_points)$
+xs2:makelist(a_2__2+(b_2-a_2__2)/count_of_points*i, i, 0, count_of_points)$
+ys2:makelist(ratsimp(theU7(xs2[i+1])),i,0,count_of_points)$
+xs3:makelist(a_2__3+(b_3-a_2__3)/count_of_points*i, i, 0, count_of_points)$
+ys3:makelist(ratsimp(theU7(xs3[i+1])),i,0,count_of_points)$
+/*
+xs:makelist(17/count_of_points*i, i, 0, count_of_points)$
+ys:makelist(ratsimp(theU7(xs[i+1])),i,0,count_of_points)$
+*/
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-ev(integrate(unit_step(5/2-s),s,2,3),nouns);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-wxplot2d([theU6(x)], [x,2,3], [y,-10000,10000],
- [nticks,3])$
+wxplot2d([discrete,xs1,ys1]);
+wxplot2d([discrete,xs4,ys4]);
+wxplot2d([discrete,xs2,ys2]);
+wxplot2d([discrete,xs3,ys3]);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
