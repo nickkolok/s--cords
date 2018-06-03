@@ -182,6 +182,13 @@ k_1:0 $ k_2:0 $ k_3: 1$ k_4: 1$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
+L1:1$
+L2:1$
+L3:1$
+L4:1$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
 h:ev(G(x,s)*f(s))$
 /* [wxMaxima: input   end   ] */
 
@@ -249,6 +256,23 @@ wxplot2d([discrete,xs3,ys3]);
 /*xs:makelist(17/count_of_points*i, i, 0, count_of_points)$
 ys:makelist(ratsimp(theU7(xs[i+1])),i,0,count_of_points)$
 wxplot2d([discrete,xs,ys]);*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+xs1sh:makelist(xs1[i+1]-xs1[1]      , i,0,count_of_points)$
+xs4sh:makelist(xs4[i+1]-xs4[1]+L1   , i,0,count_of_points)$
+xs3sh:makelist(xs3[i+1]-xs3[1]+L1+L2, i,0,count_of_points)$
+xs2sh:makelist(xs2[i+1]-xs2[1]+L1+L2, i,0,count_of_points)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([
+            [discrete,xs1sh,ys1]
+           ,[discrete,xs4sh,ys4]
+           ,[discrete,xs2sh,ys2]
+           ,[discrete,xs3sh,ys3]
+        ]/*,
+         [x, b_1, b_2]*/)$
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
