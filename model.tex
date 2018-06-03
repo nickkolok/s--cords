@@ -355,8 +355,33 @@
 	l_8u_{42} & =   p(a_2^4) \cdot \frac{-1}{p(a_2^4)} = -1
 \end{align}
 
-Теперь с помощью wxMaxima слеложно найти характеристический определитель:
-\begin{multline*}
-	\frac{\mathit{k_2}\cdot \left( -\mathrm{P}\left( \mathit{b_1},\mathit{a_1^1}\right) \cdot \mathit{k_3}\cdot \mathit{k_4}-\mathrm{P}\left( \mathit{a_2^4},\mathit{a_1^4}\right) \cdot \left( 1+\mathrm{P}\left( \mathit{b_1},\mathit{a_1^1}\right) \cdot \mathit{k_1}\right) \cdot \mathit{k_3}\cdot \mathit{k_4}-\left( 1+\mathrm{P}\left( \mathit{b_1},\mathit{a_1^1}\right) \cdot \mathit{k_1}\right) \cdot \mathit{k_3}\cdot \left( 1+\mathrm{P}\left( \mathit{b_2},\mathit{a_2^2}\right) \cdot \mathit{k_4}\right) \right) }{\mathrm{p}\left( \mathit{b_3}\right) }-\frac{\left( 1+\mathrm{P}\left( \mathit{b_1},\mathit{a_1^1}\right) \cdot \mathit{k_1}\right) \cdot \mathit{k_3}\cdot \mathit{k_4}}{\mathrm{p}\left( \mathit{b_3}\right) }
-\end{multline*}
+Теперь с помощью wxMaxima несложно найти характеристический определитель:
+\begin{multline}\label{charact_det}
+	\Delta =
+	\frac{k_3}{p(b_3)}
+	%\cdot \\ \cdot
+	\left(
+		\left( -1-P\left( a_2^4,a_1^4\right)  k_2-P\left( b_2,a_2^2\right)  k_2\right)
+		\left( k_4+P\left( b_1,a_1^1\right)  k_1 k_4\right)
+		\right. + \\ + \left.
+		k_2 \left( -1-P\left( b_1,a_1^1\right)  k_1-P\left( b_1,a_1^1\right)  k_4\right)
+	\right)
+\end{multline}
+
+\paragraph{Невырожденность задачи.}
+Из \eqref{charact_det} легко видеть,
+что при $k_3 = 0$ задача становится вырожденной.
+Обнуление жёсткости других пружин (т.е. де-факто замена их на кольца)
+приводит к не столь явным результатам.
+
+Пусть $k_2 = 0$, тогда
+\begin{equation}
+	\Delta = - \frac{k_3}{p(b_3)} \left( P\left( b_1,a_1^1\right)  k_1+1\right)  k_4
+\end{equation}
+
+Если же $k_4 = 0$, то
+\begin{equation}
+	\Delta = - \frac{k_3}{p(b_3)} \left( P\left( b_1,a_1^1\right)  k_1+1\right)  k_4
+\end{equation}
+
 \end{document}
