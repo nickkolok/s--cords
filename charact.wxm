@@ -14,10 +14,19 @@ gradef(charfun(y), 0)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-b_1    :  2$ a_1__1 :  3$
-a_1__4 :  6$ a_2__4 :  7$
-a_2__3 : 10$ b_3    : 11$
-a_2__2 : 14$ b_2    : 15$
+/*assume(L1>0,L2>0,L3>0,L4>0);*/
+L1:1$
+L2:1$
+L3:1$
+L4:3$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gap:3$
+b_1    :  2            $    a_1__1 :  b_1    + L1$
+a_1__4 :  a_1__1 + gap $    a_2__4 :  a_1__4 + L4$
+a_2__3 :  a_2__4 + gap $    b_3    :  a_2__3 + L3$
+a_2__2 :  b_3    + gap $    b_2    :  a_2__2 + L2$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -225,15 +234,18 @@ theU7(y):=integrateforceassume(at(h6,x=y))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-count_of_points:30$
-xs1:makelist(b_1+(a_1__1-b_1)/count_of_points*i, i, 0, count_of_points)$
+count_of_points:10$
+
+xs1:makelist(b_1    + L1 / count_of_points * i, i, 0, count_of_points)$
+xs2:makelist(a_2__2 + L2 / count_of_points * i, i, 0, count_of_points)$
+xs3:makelist(a_2__3 + L3 / count_of_points * i, i, 0, count_of_points)$
+xs4:makelist(a_1__4 + L4 / count_of_points * i, i, 0, count_of_points)$
+
 ys1:makelist(ratsimp(theU7(xs1[i+1])),i,0,count_of_points)$
-xs4:makelist(a_1__4+(a_2__4-a_1__4)/count_of_points*i, i, 0, count_of_points)$
-ys4:makelist(ratsimp(theU7(xs4[i+1])),i,0,count_of_points)$
-xs2:makelist(a_2__2+(b_2-a_2__2)/count_of_points*i, i, 0, count_of_points)$
 ys2:makelist(ratsimp(theU7(xs2[i+1])),i,0,count_of_points)$
-xs3:makelist(a_2__3+(b_3-a_2__3)/count_of_points*i, i, 0, count_of_points)$
 ys3:makelist(ratsimp(theU7(xs3[i+1])),i,0,count_of_points)$
+ys4:makelist(ratsimp(theU7(xs4[i+1])),i,0,count_of_points)$
+
 /*
 xs:makelist(17/count_of_points*i, i, 0, count_of_points)$
 ys:makelist(ratsimp(theU7(xs[i+1])),i,0,count_of_points)$
