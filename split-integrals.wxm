@@ -68,7 +68,7 @@ splitint(jjj);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-expandintofsum(jjj);
+expandintofsum
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -85,83 +85,6 @@ expandintofsum(jjj2+jjj);
 
 /* [wxMaxima: input   start ] */
 expandintofsum(integrate(gh(x),x,7,8));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-oldsimp:simp;
-simp:false;
-matchdeclare ([aa,bb,xx,cc,dd], all);
-defrule(splitintegrals, 'integrate(aa+bb,xx,cc,dd), 'integrate(aa,xx,cc,dd)+'integrate(bb,xx,cc,dd));
-simp:oldsimp;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-simp:false;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-applyb1('integrate((charfun(1-s>0)*charfun(x-s>0))+(charfun(x>0)),x,2,4),splitintegrals);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
- 
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*tellsimp ('integrate(aa+bb,xx,cc,dd), 'integrate(aa,xx,cc,dd)+'integrate(bb,xx,cc,dd));*/
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-'integrate(charfun(x>0) + p,x,2,4);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-simp:false;
-matchdeclare ([aa,bb,xx,cc,dd], all);
-tellsimpafter('integrate(aa+bb,xx,cc,dd), integrate(aa,xx,cc,dd)+integrate(bb,xx,cc,dd));
-simp:true;
-integrate(a(x)+b,x,c,d);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-  disprule (all);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-tellsimpafter((aa+bb,xx,cc,dd), 'integrate(aa,xx,cc,dd)+'integrate(bb,xx,cc,dd));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-expand(integrate(charfun(x>0) + charfun(x-s>0),x,2,4));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-op(part(%o1,1));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-parts(a+b+c);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-q:(a+b+c-sin(x)*2*cos(p+2));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-length(q);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-is(op(integrate(f(x),x,r,t))=integrate);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-firstn(h+1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
- example (part);
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
