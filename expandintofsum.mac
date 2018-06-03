@@ -1,18 +1,18 @@
 ttyoff: nolabels: true $
 
-splitint(expr) := block([s,x,a,b],
+splitint(expr) := block([splitintegrals_s,splitintegrals_x,splitintegrals_a,splitintegrals_b],
     if atom(expr) then expr else
-    if(op(expr)#op('integrate(a(b),b))) then expr else (
-        s:part(expr,1),
-        if length(s) < 2 or (length(s)=2 and (part(s,1) = 0 or part(s,2)=0))then expr else
+    if(op(expr)#op('integrate(splitintegrals_splitintegrals_a(splitintegrals_splitintegrals_b),splitintegrals_splitintegrals_b))) then expr else (
+        splitintegrals_s:part(expr,1),
+        if atom(splitintegrals_s) or length(splitintegrals_s) < 2 or (length(splitintegrals_s)=2 and (part(splitintegrals_s,1) = 0 or part(splitintegrals_s,2)=0))then expr else
         if(length(expr)>2) then ( /*definite*/
-            x: part(expr,2),
-            a: part(expr,3),
-            b: part(expr,4),
-            if(op(s)#"+") then expr else (
-                'integrate(rest(s),x,a,b)
+            splitintegrals_x: part(expr,2),
+            splitintegrals_a: part(expr,3),
+            splitintegrals_b: part(expr,4),
+            if(op(splitintegrals_s)#"+") then expr else (
+                'integrate(rest(splitintegrals_s),splitintegrals_x,splitintegrals_a,splitintegrals_b)
                 +
-                integrate_splitted(first  (s   ),x,a,b)
+                integrate_splitted(first  (splitintegrals_s   ),splitintegrals_x,splitintegrals_a,splitintegrals_b)
             )
         ) else expr
     )
