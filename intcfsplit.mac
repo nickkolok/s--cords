@@ -1,0 +1,50 @@
+ttyoff: nolabels: true $
+
+solve_charfun(expr,v):=block([ineq,f,solut],
+    if atom(expr) or op(expr) # charfun then false else (
+        ineq: part(expr,1),
+        if op(ineq) # ">" and op(ineq) # ">=" then false else (
+            f: part(ineq,1)-part(ineq,2),
+            solut: solve(f,v),
+            if length(solut) # 1 then false else (
+                solut:solut[1],
+                if part(solut,1) # v then false else (
+                    solut:part(solut,2),
+                    if not freeof(g, solut) then false else solut
+                )
+            )
+        )
+    )
+)$
+
+split_integral_according_to_charfun(expr) := block([x_var_dummy,a,firstlevel,solut],
+    if atom(expr) or op(expr) # op('integrate(x,x)) or length(expr) # 4 then expr else (
+        x_var_dummy: part(expr,2),
+        if freeof(charfun, expr) then expr else (
+            firstlevel: part(expr,1),
+            a: solve_charfun(firstlevel,x_var_dummy),
+            for i:1 thru length(firstlevel) do (
+                solut:solve_charfun(part(firstlevel,i),x_var_dummy),
+                if (solut#false) then (a: solut)
+            ),
+            if a = false then expr else (
+                'integrate_splitcf(part(expr,1),x_var_dummy,part(expr,3),a)
+                +
+                'integrate_splitcf(part(expr,1),x_var_dummy,a,part(expr,4))
+            )
+        )
+    )
+)$
+
+
+oldsimp:simp$
+simp:false$
+matchdeclare ([aa,bb,xx,cc,dd], all)$
+defrule(split_integral_according_to_charfun_rule1, 'integrate(aa,xx,cc,dd), split_integral_according_to_charfun('integrate(aa,xx,cc,dd)))$
+defrule(split_integral_according_to_charfun_rule2, 'integrate_splitcf(aa,xx,cc,dd), 'integrate(aa,xx,cc,dd))$
+simp:oldsimp$
+
+intcfsplit(expr):=applyb1(apply1(expr,split_integral_according_to_charfun_rule1),split_integral_according_to_charfun_rule2)$
+
+
+ttyoff: nolabels: false $

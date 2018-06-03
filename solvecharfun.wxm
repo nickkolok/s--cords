@@ -1,0 +1,106 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+solve_charfun(expr,v):=block([ineq,f,solut],
+    if atom(expr) or op(expr) # charfun then false else (
+        ineq: part(expr,1),
+        if op(ineq) # ">" and op(ineq) # ">=" then false else (
+            f: part(ineq,1)-part(ineq,2),
+            solut: solve(f,v),
+            if length(solut) # 1 then false else (
+                solut:solut[1],
+                if part(solut,1) # v then false else (
+                    solut:part(solut,2),
+                    if not freeof(g, solut) then false else solut
+                )
+            )
+        )
+    )
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve_charfun('charfun(g>1),g);
+solve_charfun('charfun(g^2>1),g);
+solve_charfun((g>1),g);
+solve_charfun('charfun(sin(g) + g > 1),g);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(sin(g) + g = 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(g^2=1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+_splitcf
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+split_integral_according_to_charfun('integrate(x^2,x,0,1));
+split_integral_according_to_charfun('integrate(x^2,x));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+split_integral_according_to_charfun('integrate(charfun(x>s),x,0,1));
+split_integral_according_to_charfun('integrate(charfun(x>s)+s,s,0,1));
+g(y):=at(split_integral_according_to_charfun('integrate(x^2*s+charfun(x>s)+s,s,0,1)),[x=y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("integrateforceassume.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrateforceassume(g(1/2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+oldsimp:simp$
+simp:false$
+matchdeclare ([aa,bb,xx,cc,dd], all)$
+defrule(split_integral_according_to_charfun_rule1, 'integrate(aa,xx,cc,dd), split_integral_according_to_charfun('integrate(aa,xx,cc,dd)))$
+defrule(split_integral_according_to_charfun_rule2, 'integrate_splitted(aa,xx,cc,dd), 'integrate(aa,xx,cc,dd))$
+simp:oldsimp$
+
+intcfsum(expr):=applyb1(apply1(expr,split_integral_according_to_charfun_rule1),split_integral_according_to_charfun_rule2)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+simp:false;
+intcfsum(integrate(charfun(-(2*s-x)>=0),s,2,3));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=integrate(charfun(s-x>=0),s,2,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x):=integrate(charfun(s-x>=0),s,2,x)+integrate(charfun(s-x>=0),s,x,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(100);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+freeof;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+neg
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
