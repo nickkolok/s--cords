@@ -412,27 +412,57 @@
 
 \begin{multline}
 	{v_2(x)}{\tilde{\Delta}}=
-	k_4 \int_{2}^{x}\frac{dt}{p(t)} thechi_4^1\left( x\right) +\left( 1+\left( k_4+k_1\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  thechi_3^2\left( x\right) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  thechi_2^3\left( x\right) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  thechi_1^4\left( x\right)
+	k_4 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x) +\left( 1+\left( k_4+k_1\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \chi_3(x) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
-	{v_3(x)}{\tilde{\Delta}}=
-	\left( \left( p\left( 11\right)  k_4+p\left( 11\right)  k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+p\left( 11\right)  k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_4^1\left( x\right) + thechi_3^2\left( x\right) ++ thechi_1^4\left( x\right)
+	{v_3(x)}{\tilde{\Delta}}p(11)=
+	\left(
+		k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{x}\frac{dt}{p(t)}
+	\right)\chi_1(x)
+	+\\+
+	\left(
+		\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{x}\frac{dt}{p(t)}+\left( k_2 \int_{2}^{3}\frac{dt}{p(t)}
+		\right.\right. +\\+ \left.\left.
+		\left( k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}+k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\int_{2}^{3}\frac{dt}{p(t)}
+	\right)k_4\chi_2(x)
+	+\\+
+	\left(
+		\left(
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
+			k_2 k_3 k_4 \left( k_1 \int_{2}^{3}\frac{dt}{p(t)}+1\right) \int_{ 6}^{7}\frac{dt}{p(t)}
+			\right.\right. +\\+ \left.\left.
+			k_2 k_3 k_4 \left( k_1 \int_{2}^{3}\frac{dt}{p(t)}+1\right) \int_{10}^{x}\frac{dt}{p(t)}
+		\right)
+		\int_{14}^{15}\frac{dt}{p(t)}+\left( k_2 k_3+k_3 k_4
+		\right.\right. +\\+ \left.\left.
+		\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{x}\frac{dt}{p(t)}
+		\right. +\\+ \left.
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\right. +\\+ \left.
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+	\right)\frac{\chi_3(x)}{k_3}
+	+\\+
+	\left(
+		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\right. +\\+ \left.
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{x}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+	\right)\chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_4(x)}{\tilde{\Delta}}=
-	k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} thechi_4^1\left( x\right) +\left( -k_4-k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  thechi_3^2\left( x\right) +\left( -k_2-k_4+\left( -k_1 k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_2^3\left( x\right) + thechi_1^4\left( x\right)
+	k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x) +\left( -k_4-k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x) +\left( -k_2-k_4+\left( -k_1 k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_3(x) + \chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_5(x)}{\tilde{\Delta}}=
-	\left( \left( k_4+k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_4^1\left( x\right) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{x}\frac{dt}{p(t)}\right)  thechi_3^2\left( x\right) +\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_2^3\left( x\right) +\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_1^4\left( x\right)
+	\left( \left( k_4+k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_1(x) +\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x) +\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_3(x) +\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_6(x)}{\tilde{\Delta}}=
-	-k_2 \int_{2}^{x}\frac{dt}{p(t)} thechi_4^1\left( x\right) +\left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}+k_2\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  thechi_3^2\left( x\right) +\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  thechi_2^3\left( x\right) +\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{x}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  thechi_1^4\left( x\right)
+	-k_2 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x) +\left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}+k_2\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x) +\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \chi_3(x) +\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{x}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
@@ -442,7 +472,7 @@
 
 \begin{multline}
 	{v_8(x)}{\tilde{\Delta}}=
-	\left( \left( k_4+k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  thechi_4^1\left( x\right) + thechi_3^2\left( x\right) + thechi_2^3\left( x\right) + thechi_1^4\left( x\right)
+	\left( \left( k_4+k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_1(x) + \chi_2(x) + \chi_3(x) + \chi_4(x)
 \end{multline}
 
 
