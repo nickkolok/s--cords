@@ -291,7 +291,7 @@ theU7(y)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-count_of_points:5$
+count_of_points:30$
 xs1:makelist(b_1+(a_1__1-b_1)/count_of_points*i, i, 0, count_of_points)$
 ys1:makelist(ratsimp(theU7(xs1[i+1])),i,0,count_of_points)$
 xs4:makelist(a_1__4+(a_2__4-a_1__4)/count_of_points*i, i, 0, count_of_points)$
