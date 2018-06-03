@@ -156,11 +156,6 @@ slv(x,s):= sum((l[i](K))*v[i](x),i,1,8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*slv(x,s);
-slv(x_1,s_1);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 G(x,s):=ev(K(x,s) - slv(x,s),nouns)$
 /* [wxMaxima: input   end   ] */
 
