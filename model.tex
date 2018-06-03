@@ -304,9 +304,9 @@
 	-\frac{k_3}{p(b_3)}
 	%\cdot \\ \cdot
 	\left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \left( \int_{6}^{7}\frac{dt}{p(t)}+\int_{14}^{15}\frac{dt}{p(t)}\right)
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)
 		\right. +\\+ \left.
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)
 \end{multline}
 
@@ -318,12 +318,12 @@
 
 Пусть $k_2 = 0$, тогда
 \begin{equation}
-	\Delta = - \frac{k_3}{p(b_3)} \left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)} \right)  k_4
+	\Delta = - \frac{k_3}{p(b_3)} \left( 1+k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \right)  k_4
 \end{equation}
 
 Если же $k_4 = 0$, то
 \begin{equation}
-	\Delta = - \frac{k_3}{p(b_3)} \left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)} \right)  k_2
+	\Delta = - \frac{k_3}{p(b_3)} \left( 1+k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \right)  k_2
 \end{equation}
 
 Таким образом, если $k_2 = k_4 = 0$, то задача вырождается;
@@ -333,7 +333,7 @@
 Если $k_1=0$, то
 \begin{equation}
 	\Delta = - \frac{k_3}{p(b_3)} \left(
-		k_2 k_4 \left( \int_{2}^{3}\frac{dt}{p(t)}+\int_{6}^{7}\frac{dt}{p(t)}+\int_{14}^{15}\frac{dt}{p(t)}\right) +k_4+k_2
+		k_2 k_4 \left( \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right) +k_4+k_2
 	\right)
 \end{equation}
 
@@ -351,129 +351,129 @@
 Итак,
 \begin{multline}
 	\tilde{\Delta} =
-	\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-	\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
+	\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+	\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
 	%\\+
-	%\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
+	%\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
 	%\\+
-	\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+	\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 \end{multline}
 
 \begin{multline}
 	{v_1(x)}{\tilde{\Delta}}=
 	\left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_1 k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_1 k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_1 k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( \left( -k_2-k_1\right)  k_4-k_1 k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_1 k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( \left( -k_2-k_1\right)  k_4-k_1 k_2\right)  \int_{b_1}^{x}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)\chi_1(x)
 	+\\+
 	\left(
-		-k_2 k_4 \int_{14}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{14}^{15}\frac{dt}{p(t)}+k_4
+		-k_2 k_4 \int_{a_2^2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+k_4
 	\right)\chi_2(x)
 	+\\+
 	\left(
-		k_2 k_4 \int_{14}^{15}\frac{dt}{p(t)}+k_4+k_2
+		k_2 k_4 \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+k_4+k_2
 	\right)\chi_3(x)
 	+\\+
 	\left(
-		k_2 k_4 \int_{14}^{15}\frac{dt}{p(t)}-k_2 k_4 \int_{6}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{6}^{7}\frac{dt}{p(t)}+k_4+k_2
+		k_2 k_4 \int_{a_2^2}^{b_2}\frac{dt}{p(t)}-k_2 k_4 \int_{a_1^4}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+k_4+k_2
 	\right)\chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_2(x)}{\tilde{\Delta}}=
-	k_4 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x)
+	k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \chi_1(x)
 	+\\+
-	\left( 1+\left( k_4+k_1\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}
+	\left( 1+\left( k_4+k_1\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	%\right. \right. +\\+ \left. \left.
-	k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
+	k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4\right)  \int_{a_2^2}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
 	+\\+
-	\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \chi_3(x)
+	\left( k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \chi_3(x)
 	+\\+
-	\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  \chi_4(x)
+	\left( k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_3(x)}{\tilde{\Delta}}p(11)=
 	\left(
-		k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{x}\frac{dt}{p(t)}
+		k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{x}\frac{dt}{p(t)}
 	\right)\chi_1(x)
 	+\\+
 	\left(
-		\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{x}\frac{dt}{p(t)}+\left( k_2 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( \left( -k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}-k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{x}\frac{dt}{p(t)}+\left( k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 		\right.\right. +\\+ \left.\left.
-		\left( k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}+k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( 1+k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right)k_4\chi_2(x)
 	+\\+
 	\left(
 		\left(
-			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-			k_2 k_3 k_4 \left( k_1 \int_{2}^{3}\frac{dt}{p(t)}+1\right) \int_{ 6}^{7}\frac{dt}{p(t)}
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+			k_2 k_3 k_4 \left( k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+1\right) \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right.\right. +\\+ \left.\left.
-			k_2 k_3 k_4 \left( k_1 \int_{2}^{3}\frac{dt}{p(t)}+1\right) \int_{10}^{x}\frac{dt}{p(t)}
+			k_2 k_3 k_4 \left( k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+1\right) \int_{a_2^3}^{x}\frac{dt}{p(t)}
 		\right)
-		\int_{14}^{15}\frac{dt}{p(t)}+\left( k_2 k_3+k_3 k_4
+		\int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2 k_3+k_3 k_4
 		\right.\right. +\\+ \left.\left.
-		\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{x}\frac{dt}{p(t)}
+		\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^3}^{x}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)\frac{\chi_3(x)}{k_3}
 	+\\+
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{x}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right)\chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_4(x)}{\tilde{\Delta}}=
-	k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x)
+	k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \chi_1(x)
 	+\\+
-	\left( -k_4-k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}
+	\left( -k_4-k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 	\right. +\\+ \left.
-	\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
+	\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_2^2}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
 	+\\+
-	\left( -k_2-k_4+\left( -k_1 k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_3(x)
+	\left( -k_2-k_4+\left( -k_1 k_4-k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \chi_3(x)
 	+\\+
-	\left(\left( -k_2 k_4-k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{x}\frac{dt}{p(t)}
+	\left(\left( -k_2 k_4-k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}
 	\right. +\\+ \left.
-	\left( -k_2 k_4-k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( -k_1 k_2-k_1 k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}-k_4-k_2\right)
+	\left( -k_2 k_4-k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( -k_1 k_2-k_1 k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_4-k_2\right)
 	\chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_5(x)}{\tilde{\Delta}}=
-	\left( \left( k_4+k_2\right)  \int_{2}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_1(x)
+	\left( \left( k_4+k_2\right)  \int_{b_1}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \chi_1(x)
 	+\\+
-	\left( k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
+	\left( k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}-k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_2^2}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
 	+\\+
-	\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_3(x)
+	\left( \left( k_4+k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \chi_3(x)
 	+\\+
-	\left( \left( k_4+k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{6}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \chi_4(x)
+	\left( \left( k_4+k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}-k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_1^4}^{x}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_6(x)}{\tilde{\Delta}}=
-	-k_2 \int_{2}^{x}\frac{dt}{p(t)} \chi_1(x)
+	-k_2 \int_{b_1}^{x}\frac{dt}{p(t)} \chi_1(x)
 	+\\+
-	\left( 1+k_1 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}+k_2\right)  \int_{14}^{15}\frac{dt}{p(t)}+\left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{14}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
+	\left( 1+k_1 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( -k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2\right)  \int_{a_2^2}^{x}\frac{dt}{p(t)}\right)  \chi_2(x)
 	+\\+
-	\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \chi_3(x)
+	\left( \left( -k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}-k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \chi_3(x)
 	+\\+
-	\left( \left( -k_1 k_2 \int_{2}^{3}\frac{dt}{p(t)}-k_2\right)  \int_{6}^{x}\frac{dt}{p(t)}-k_2 \int_{2}^{3}\frac{dt}{p(t)}\right)  \chi_4(x)
+	\left( \left( -k_1 k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}-k_2 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \chi_4(x)
 \end{multline}
 
 \begin{multline}
 	{v_7(x)}k_3{\tilde{\Delta}}=
 	\left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)\chi_3(x)
 \end{multline}
 
@@ -481,29 +481,29 @@
 \begin{multline}
 	{v_8(x)}{\tilde{\Delta}}=
 	\left(
-		k_2 k_4 \int_{2}^{x}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{x}\frac{dt}{p(t)}
+		k_2 k_4 \int_{b_1}^{x}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{x}\frac{dt}{p(t)}
 	\right)\chi_1(x)
 	+\\+
 	\left(
-		\left( \left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}-k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{x}\frac{dt}{p(t)}
+		\left( \left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}-k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{x}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right)\chi_2(x)
 	+\\+
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		%\right. +\\+ \left.
-		\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right)\chi_3(x)
 	+\\+
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{x}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. +\\+ \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{x}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{x}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right)\chi_4(x)
 \end{multline}
 
@@ -519,19 +519,19 @@
 	G(x_1,s_1)=\\=
 	\left(
 		\left(
-			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}
+			\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right)
-		\int_{s_1}^{x_1}\frac{dt}{p(t)}+\left( \left( \left( k_1+k_2\right)  k_4+k_1 k_2\right)  \int_{2}^{x_1}\frac{dt}{p(t)}
+		\int_{s_1}^{x_1}\frac{dt}{p(t)}+\left( \left( \left( k_1+k_2\right)  k_4+k_1 k_2\right)  \int_{b_1}^{x_1}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		k_1 k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}+k_1 k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \int_{s_1}^{3}\frac{dt}{p(t)}
+		k_1 k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+k_1 k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \int_{s_1}^{a_1^1}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		k_2 k_4 \left( \int_{2}^{x_1}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}+\int_{2}^{x_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right) +\left( k_2+k_4\right)  \int_{2}^{x_1}\frac{dt}{p(t)}
+		k_2 k_4 \left( \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right) +\left( k_2+k_4\right)  \int_{b_1}^{x_1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
@@ -539,17 +539,17 @@
 \begin{multline}
 	G(s_1,x_1)=\\=
 	\left(
-		\left( \left( \left( k_1+k_2\right)  k_4+k_1 k_2\right)  \int_{2}^{s_1}\frac{dt}{p(t)}
+		\left( \left( \left( k_1+k_2\right)  k_4+k_1 k_2\right)  \int_{b_1}^{s_1}\frac{dt}{p(t)}
 		+%\right. \right. + \\ + \left. \left.
-		k_1 k_2 k_4 \int_{2}^{s_1}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}
+		k_1 k_2 k_4 \int_{b_1}^{s_1}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		k_1 k_2 k_4 \int_{2}^{s_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}\right)  \int_{x_1}^{3}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{s_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{s_1}\frac{dt}{p(t)} \int_{6}^{7}\frac{dt}{p(t)}
+		k_1 k_2 k_4 \int_{b_1}^{s_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}\right)  \int_{x_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{s_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{s_1}\frac{dt}{p(t)} \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2+k_4\right)  \int_{2}^{s_1}\frac{dt}{p(t)}
+		\left( k_2+k_4\right)  \int_{b_1}^{s_1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
@@ -559,23 +559,23 @@
 	G(x_2,s_2)=\\=
 	\left(
 		\left(
-			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}
+			\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right)
 		\int_{s_2}^{x_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 		+%\right. \right. \right. + \\ + \left. \left. \left.
-		k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{14}^{x_2}\frac{dt}{p(t)}\right)  \int_{s_2}^{15}\frac{dt}{p(t)}
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_2^2}^{x_2}\frac{dt}{p(t)}\right)  \int_{s_2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{x_2}\frac{dt}{p(t)}+\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+1
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{x_2}\frac{dt}{p(t)}+\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+1
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
@@ -583,19 +583,19 @@
 \begin{multline}
 	G(s_2,x_2)=\\=
 	\left(
-		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 		+%\right. \right. \right. + \\ + \left. \left. \left.
-		k_2 k_4\right)  \int_{14}^{s_2}\frac{dt}{p(t)}\right)  \int_{x_2}^{15}\frac{dt}{p(t)}+
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{s_2}\frac{dt}{p(t)}
+		k_2 k_4\right)  \int_{a_2^2}^{s_2}\frac{dt}{p(t)}\right)  \int_{x_2}^{b_2}\frac{dt}{p(t)}+
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{s_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+1
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+1
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
@@ -604,24 +604,24 @@
 	G(s_3,x_3)=\\=
 	\left(
 		\left(
-			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+			\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{s_3}\frac{dt}{p(t)}
+			\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_2^3}^{s_3}\frac{dt}{p(t)}
 		\right)
-		\int_{14}^{15}\frac{dt}{p(t)}
+		\int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{s_3}\frac{dt}{p(t)}
+		\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^3}^{s_3}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}  k_3^{-1}
 \end{multline}
 
@@ -629,34 +629,34 @@
 	G(x_3,s_3)=\\=
 	\left(
 		\left(
-			-k_2 k_3-k_3 k_4+\left( \left( -k_1-k_2\right)  k_3 k_4-k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+			-k_2 k_3-k_3 k_4+\left( \left( -k_1-k_2\right)  k_3 k_4-k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( -k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_3 k_4\right)\cdot
+			\left( -k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_3 k_4\right)\cdot
 			\left(
-				\int_{6}^{7}\frac{dt}{p(t)} + \int_{14}^{15}\frac{dt}{p(t)}
+				\int_{a_1^4}^{a_2^4}\frac{dt}{p(t)} + \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 			\right)
 		\right)
 		\int_{s_3}^{x_3}\frac{dt}{p(t)}
 		\right. + \\ + \left.
 		\left(
-			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+			\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{x_3}\frac{dt}{p(t)}
+			\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_2^3}^{x_3}\frac{dt}{p(t)}
 		\right)
-		\int_{14}^{15}\frac{dt}{p(t)}
+		\int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 		\right. \right. + \\ + \left. \left.
-		\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{x_3}\frac{dt}{p(t)}
+		\left( k_1 k_2 k_3 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{a_2^3}^{x_3}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}  k_3^{-1}
 \end{multline}
 
@@ -664,44 +664,44 @@
 	G(x_4,s_4)=\\=
 	\left(
 		\left(
-			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+
-			\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			-k_2-k_4+\left( \left( -k_1-k_2\right)  k_4-k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+			\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}
 			\right. \right. + \\ + \left. \left.
-			\left( -k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}
+			\left( -k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}-k_2 k_4\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right)
 		\int_{s_4}^{x_4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{x_4}\frac{dt}{p(t)}\right)  \int_{s_4}^{7}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{x_4}\frac{dt}{p(t)}\right)  \int_{s_4}^{a_2^4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{x_4}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{x_4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{x_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{x_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(s_4,x_4)=\\=
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{s_4}\frac{dt}{p(t)}\right)  \int_{x_4}^{7}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}\right)  \int_{x_4}^{a_2^4}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{s_4}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{s_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
@@ -709,77 +709,77 @@
 \begin{multline}
 	G(x_1,s_2)=\\=
 	\left(
-		k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{s_2}^{15}\frac{dt}{p(t)}+k_4 \int_{2}^{x_1}\frac{dt}{p(t)}
+		k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{s_2}^{b_2}\frac{dt}{p(t)}+k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(x_1,s_3)=\\=
 	\left(
-		k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{x_1}\frac{dt}{p(t)}
+		k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{x_1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(x_1,s_4)=\\=
 	\left(
-		k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{s_4}^{7}\frac{dt}{p(t)}+k_2 k_4 \int_{2}^{x_1}\frac{dt}{p(t)} \int_{14}^{15}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{x_1}\frac{dt}{p(t)}
+		k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{s_4}^{a_2^4}\frac{dt}{p(t)}+k_2 k_4 \int_{b_1}^{x_1}\frac{dt}{p(t)} \int_{a_2^2}^{b_2}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{x_1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(x_2,s_3)=\\=
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{x_2}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}\right)  \int_{x_2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(x_2,s_4)=\\=
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{s_4}\frac{dt}{p(t)}\right)  \int_{x_2}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}\right)  \int_{x_2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{s_4}\frac{dt}{p(t)}+k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_4+k_1 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}+k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
 \begin{multline}
 	G(x_3,s_4)=\\=
 	\left(
-		\left( k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+
-		k_2 k_4\right)  \int_{6}^{s_4}\frac{dt}{p(t)}\right)  \int_{14}^{15}\frac{dt}{p(t)}
+		\left( k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+
+		k_2 k_4\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}\right)  \int_{a_2^2}^{b_2}\frac{dt}{p(t)}
 		\right. + \\ + \left.
-		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{s_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\left( k_2+k_4+\left( k_1 k_4+k_1 k_2\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)  \int_{a_1^4}^{s_4}\frac{dt}{p(t)}+\left( k_2+k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}
 	\right) \cdot \\ \cdot \left(
-		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
-		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
-		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\left( k_2 k_4+k_1 k_2 k_4 \int_{b_1}^{a_1^1}\frac{dt}{p(t)}\right)
+		\left( \int_{a_1^4}^{a_2^4}\frac{dt}{p(t)}+ \int_{a_2^2}^{b_2}\frac{dt}{p(t)} \right)+
+		\left( k_1 k_2+\left( k_2+k_1\right)  k_4\right)  \int_{b_1}^{a_1^1}\frac{dt}{p(t)}+k_4+k_2
 	\right)^{-1}
 \end{multline}
 
