@@ -384,4 +384,64 @@
 	\Delta = - \frac{k_3}{p(b_3)} \left( P\left( b_1,a_1^1\right)  k_1+1\right)  k_4
 \end{equation}
 
+
+\paragraph{Специальная фундаментальная система решений (СФСР).}
+Найдём СФСР $\{v_i(x)\}_{i=1}^{8}$.
+У всех функций $v_i(x)$ будет общий знаменатель,
+наличие которого объясняется тем,
+что в формуле для СФСР присутсвует деление на характеристичекий определитель $\Delta$.
+Однако этот знаменатель (обозначим его $\tilde{\Delta}$)
+не совпадает с $\Delta$,
+т.к. некоторые множители сокращаются.
+
+Итак,
+\begin{multline}
+	\tilde{\Delta} =
+	\left( \mathit{k\_2}\cdot \mathit{k\_4}+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt+
+	\\+
+	\left( \mathit{k\_2}\cdot \mathit{k\_4}+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt+
+	\\+
+	\left( \mathit{k\_1}\cdot \mathit{k\_2}+\left( \mathit{k\_2}+\mathit{k\_1}\right) \cdot \mathit{k\_4}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}+\mathit{k\_2}
+\end{multline}
+
+\begin{multline}
+	\frac{v_1(x)}{\tilde{\Delta}}=
+	(\mathit{k\_2}+\mathit{k\_4}+\left( \left( \mathit{k\_1}+\mathit{k\_2}\right) \cdot \mathit{k\_4}+\mathit{k\_1}\cdot \mathit{k\_2}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \left( -\mathit{k\_1}-\mathit{k\_2}\right) \cdot \mathit{k\_4}-\mathit{k\_1}\cdot \mathit{k\_2}\right) \cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt
+\end{multline}
+
+\begin{multline}
+	\frac{v_2(x)}{\tilde{\Delta}}=
+	\mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\left( 1+\left( \mathit{k\_4}+\mathit{k\_1}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}\right) \cdot \int_{14}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_3\_\_2}\left( x\right) +\left( \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_2\_\_3}\left( x\right) +\left( \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}\right) \cdot \int_{6}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
+\begin{multline}
+	\frac{v_3(x)}{\tilde{\Delta}}=
+	\left( \left( \mathrm{p}\left( 11\right) \cdot \mathit{k\_4}+\mathrm{p}\left( 11\right) \cdot \mathit{k\_2}\right) \cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathrm{p}\left( 11\right) \cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\cdot \mathrm{thechi\_3\_\_2}\left( x\right) ++\cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
+\begin{multline}
+	\frac{v_4(x)}{\tilde{\Delta}}=
+	\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\left( -\mathit{k\_4}-\mathit{k\_1}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \mathit{k\_4}\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\right) \cdot \int_{14}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_3\_\_2}\left( x\right) +\left( -\mathit{k\_2}-\mathit{k\_4}+\left( -\mathit{k\_1}\cdot \mathit{k\_4}-\mathit{k\_1}\cdot \mathit{k\_2}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \mathit{k\_4}\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_2\_\_3}\left( x\right) +\cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
+\begin{multline}
+	\frac{v_5(x)}{\tilde{\Delta}}=
+	\left( \left( \mathit{k\_4}+\mathit{k\_2}\right) \cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\left( \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_3\_\_2}\left( x\right) +\left( \left( \mathit{k\_4}+\mathit{k\_2}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_2\_\_3}\left( x\right) +\left( \left( \mathit{k\_4}+\mathit{k\_2}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{6}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
+\begin{multline}
+	\frac{v_6(x)}{\tilde{\Delta}}=
+	-\mathit{k\_2}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\left( 1+\mathit{k\_1}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\right) \cdot \int_{14}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_3\_\_2}\left( x\right) +\left( \left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_2\_\_3}\left( x\right) +\left( \left( -\mathit{k\_1}\cdot \mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\right) \cdot \int_{6}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt-\mathit{k\_2}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
+\begin{multline}
+	\frac{v_7(x)*k_3}{\tilde{\Delta}}=
+	(\left( \mathit{k\_2}\cdot \mathit{k\_4}+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_2}\cdot \mathit{k\_4}+\mathit{k\_1}\cdot \mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \int_{6}^{7}\frac{1}{\mathrm{p}\left( t\right) }dt+\left( \mathit{k\_1}\cdot \mathit{k\_2}+\left( \mathit{k\_2}+\mathit{k\_1}\right) \cdot \mathit{k\_4}\right) \cdot \int_{2}^{3}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_4}+\mathit{k\_2}
+\end{multline}
+
+\begin{multline}
+	\frac{v_8(x)}{\tilde{\Delta}}=
+	\left( \left( \mathit{k\_4}+\mathit{k\_2}\right) \cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt+\mathit{k\_2}\cdot \mathit{k\_4}\cdot \int_{2}^{x}\frac{1}{\mathrm{p}\left( t\right) }dt\cdot \int_{14}^{15}\frac{1}{\mathrm{p}\left( t\right) }dt\right) \cdot \mathrm{thechi\_4\_\_1}\left( x\right) +\cdot \mathrm{thechi\_3\_\_2}\left( x\right) +\cdot \mathrm{thechi\_2\_\_3}\left( x\right) +\cdot \mathrm{thechi\_1\_\_4}\left( x\right)
+\end{multline}
+
 \end{document}
