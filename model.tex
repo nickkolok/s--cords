@@ -583,7 +583,15 @@
 \begin{multline}
 	G(s_2,x_2)=\\=
 	\left(
-		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{14}^{s_2}\frac{dt}{p(t)}\right)  \int_{x_2}^{15}\frac{dt}{p(t)}+\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{s_2}\frac{dt}{p(t)}+\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+1
+		\left( k_2+\left( k_2 k_4+k_1 k_2\right)  \int_{2}^{3}\frac{dt}{p(t)}+
+		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\right. \right. + \\ + \left. \left.
+		\left( k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}
+		+%\right. \right. \right. + \\ + \left. \left. \left.
+		k_2 k_4\right)  \int_{14}^{s_2}\frac{dt}{p(t)}\right)  \int_{x_2}^{15}\frac{dt}{p(t)}+
+		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{14}^{s_2}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_4+k_1 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1+k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+1
 	\right) \cdot \\ \cdot \left(
 		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
 		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
@@ -596,9 +604,20 @@
 	G(s_3,x_3)=\\=
 	\left(
 		\left(
-			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{s_3}\frac{dt}{p(t)}
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
+			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			\right. \right. + \\ + \left. \left.
+			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{s_3}\frac{dt}{p(t)}
 		\right)
-		\int_{14}^{15}\frac{dt}{p(t)}+\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{s_3}\frac{dt}{p(t)}+\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\int_{14}^{15}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\right. \right. + \\ + \left. \left.
+		\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{s_3}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
 	\right) \cdot \\ \cdot \left(
 		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
 		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
@@ -610,13 +629,30 @@
 	G(x_3,s_3)=\\=
 	\left(
 		\left(
-			-k_2 k_3-k_3 k_4+\left( \left( -k_1-k_2\right)  k_3 k_4-k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( -k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( -k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_3 k_4\right)  \int_{14}^{15}\frac{dt}{p(t)}
+			-k_2 k_3-k_3 k_4+\left( \left( -k_1-k_2\right)  k_3 k_4-k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+			\right. \right. + \\ + \left. \left.
+			\left( -k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}-k_2 k_3 k_4\right)\cdot
+			\left(
+				\int_{6}^{7}\frac{dt}{p(t)} + \int_{14}^{15}\frac{dt}{p(t)}
+			\right)
 		\right)
-		\int_{s_3}^{x_3}\frac{dt}{p(t)}+
+		\int_{s_3}^{x_3}\frac{dt}{p(t)}
+		\right. + \\ + \left.
 		\left(
-			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{x_3}\frac{dt}{p(t)}
+			k_2 k_4+\left( k_2 k_3+k_1 k_2\right)  k_4 \int_{2}^{3}\frac{dt}{p(t)}+
+			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}
+			\right. \right. + \\ + \left. \left.
+			\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{10}^{x_3}\frac{dt}{p(t)}
 		\right)
-		\int_{14}^{15}\frac{dt}{p(t)}+\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}+\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{x_3}\frac{dt}{p(t)}+\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}+\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
+		\int_{14}^{15}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_2 k_3+k_3 k_4+\left( \left( k_1+k_2\right)  k_3 k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}
+		\right. \right. + \\ + \left. \left.
+		\left( k_1 k_2 k_3 k_4 \int_{2}^{3}\frac{dt}{p(t)}+k_2 k_3 k_4\right)  \int_{6}^{7}\frac{dt}{p(t)}\right)  \int_{10}^{x_3}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_2 k_3+\left( k_3+k_2\right)  k_4+\left( \left( k_1 k_2+k_1 k_3\right)  k_4+k_1 k_2 k_3\right)  \int_{2}^{3}\frac{dt}{p(t)}\right)  \int_{6}^{7}\frac{dt}{p(t)}
+		\right. + \\ + \left.
+		\left( k_1 k_2+k_2 k_3+\left( k_3+k_2+k_1\right)  k_4\right)  \int_{2}^{3}\frac{dt}{p(t)}+k_4+k_2
 	\right) \cdot \\ \cdot \left(
 		\left( k_2 k_4+k_1 k_2 k_4 \int_{2}^{3}\frac{dt}{p(t)}\right)
 		\left( \int_{6}^{7}\frac{dt}{p(t)}+ \int_{14}^{15}\frac{dt}{p(t)} \right)+
