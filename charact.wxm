@@ -254,7 +254,7 @@ Gf(y,t);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-h2:integrateforceassume(intG(Gf(x,s)));
+h2:integrateforceassume(intG(Gf(x,s)))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -278,7 +278,7 @@ theU6(y):=at(h6,[x=y])$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU6(yx)$
+/*theU6(yx)$*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -286,7 +286,7 @@ theU7(y):=integrateforceassume(at(h6,x=y))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-theU7(y)$
+/*theU7(y)$*/
 /*theU7(x):= at(integrateforceassume(ev(theU6(y),nouns)),[y=x]);*/;
 /* [wxMaxima: input   end   ] */
 
