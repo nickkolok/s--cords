@@ -141,24 +141,7 @@ v[8](y):=''(at(hv[8],[x=y]))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*ff(y):=ev(at(hv[6],[x=y,s=0]));*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*ff(x_2);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*v[6](y):=at(hv[6],[x=y]);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 K(x,s):=''(-sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s))$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*K(x,s);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: hide output   ] */
@@ -175,31 +158,6 @@ slv(x,s):= ''(sum((l[i](K))*v[i](x),i,1,8))$
 /* [wxMaxima: hide output   ] */
 /* [wxMaxima: input   start ] */
 G(xG,sG):=''(K(xG,sG) - slv(xG,sG));
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*at(hv[6],[x=y]);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*v[6];*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*v[6](x_3);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*v[6](x_3);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-/*slv(x_3,s_1);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -235,11 +193,11 @@ Gf(x,s):=''(G(x,s)*f(s))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*h:ev(G(x,s)*f(s))$*/
+/*h:ev(G(x,s)*f(s))$*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*Gf(y,st):=ev(at(h,[x=y,s=st]))$*/
+/*Gf(y,st):=ev(at(h,[x=y,s=st]))$*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -294,44 +252,6 @@ ys1:ev(ys1,nouns)$
 ys2:ev(ys2,nouns)$
 ys3:ev(ys3,nouns)$
 ys4:ev(ys4,nouns)$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*theU7(a_1__1),numer;
-theU7(a_1__4),numer;*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*ys1n:ys1,numer;*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*ys4n:ev(ys4,numer);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*xs1n:xs1,numer;*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*wxplot2d([discrete,[2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3],[0,-0.1930275716039184,-0.3870478258511823,-0.5727363659252718,-0.7406815080466728,-0.8827577286788145,-
-0.9932191822084908,-1.069374921055816,-1.111766051580166,-1.123832965446043,-1.111129518353976]]);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ys1;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ev(%);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ev(%,nouns);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ev(ys2,nouns);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
