@@ -2,10 +2,10 @@
 /* [ Created with wxMaxima version 15.08.2 ] */
 
 /* [wxMaxima: input   start ] */
-load("./charfun-ineq-simp.mac");
-load("./integrateforceassume.mac");
-load("./intcfsplit.mac");
-load("./expandintofsum.mac");
+load("./charfun-ineq-simp.mac")$
+load("./integrateforceassume.mac")$
+load("./intcfsplit.mac")$
+load("./expandintofsum.mac")$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -109,19 +109,11 @@ d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*ev(d);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: hide output   ] */
-/* [wxMaxima: input   start ] */
-v:[]$ Dbuf:[D,D,D,D,D,D,D,D]$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-hv:makelist(0,k,1,8);
-v:makelist(0,k,1,8);
+hv   :makelist(0,k,1,8);
+v    :makelist(0,k,1,8);
+Dbuf :makelist(copymatrix(D),k,1,8);
 for i:1 thru 8 do (
-    Dbuf[i]: copymatrix(D),
+    /*Dbuf[i]: copymatrix(D),*/
     for j:1 thru 8 do(
         Dbuf[i][i][j]:w[j](x,s)
     ),
@@ -151,7 +143,7 @@ K(x,s):=-ev(sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-K(x,s);
+/*K(x,s);*/
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -165,11 +157,8 @@ slv(x,s):= sum((l[i](K))*v[i](x),i,1,8);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-slv(x,s);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-slv(x_1,s_1);
+/*slv(x,s);
+slv(x_1,s_1);*/
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -182,8 +171,8 @@ G(5/2+1/10,5/2);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-at(G(x,s),[x=5/2,s=5/2+1/10]);
-at(G(x,s),[x=5/2+1/10,s=5/2]);
+/*at(G(x,s),[x=5/2,s=5/2+1/10]);
+at(G(x,s),[x=5/2+1/10,s=5/2]);*/
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -192,35 +181,7 @@ G(13/2+1/10,13/2);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-G(x_1,s_1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-K(x_1,s_1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-slv(x_1,s_1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-K(x_1,s_1);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-(s_1-x_1)*charfun(x_1-s_1>=0)-4*(x_1-2)+4*charfun(2-s_1>=0)*(s_1-2);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-is(2-s_1>0);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-ev(%);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*G(x,s);*/;
+/*G(x_1,s_1);*/
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -250,10 +211,6 @@ Gf(y,st):=ev(at(h,[x=y,s=st]))$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-Gf(y,t);
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 h2:integrateforceassume(intG(Gf(x,s)))$
 /* [wxMaxima: input   end   ] */
 
@@ -278,16 +235,7 @@ theU6(y):=at(h6,[x=y])$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*theU6(yx)$*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 theU7(y):=integrateforceassume(at(h6,x=y))$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*theU7(y)$*/
-/*theU7(x):= at(integrateforceassume(ev(theU6(y),nouns)),[y=x]);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
