@@ -273,11 +273,10 @@ xs2sh:makelist(xs2[i+1]-xs2[1]+L1+L4, i,0,count_of_points)$
 /* [wxMaxima: input   start ] */
 wxplot2d([
             [discrete,xs1sh,ys1]
-           ,[discrete,xs4sh,ys4]
            ,[discrete,xs2sh,ys2]
            ,[discrete,xs3sh,ys3]
-        ]/*,
-         [x, b_1, b_2]*/)$
+           ,[discrete,xs4sh,ys4]
+        ],[legend, "струна 1", "струна 2", "струна 3", "струна 4"])$
 /* [wxMaxima: input   end   ] */
 
 /* Maxima can't load/batch files which end with a comment! */
