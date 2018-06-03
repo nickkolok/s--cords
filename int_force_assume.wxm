@@ -1,0 +1,258 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+matchdeclare([aa,bb,cc,dd,xx], all);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+oldsimp:simp;
+simp:false;
+defmatch(match, 'integrate(aa*charfun(bb),xx,cc,dd));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+match('integrate(f(x)*(charfun(h+x>0)),x, a, b));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("pw.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=charfun(x>2)*charfun(x<7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(f(x), x, 3, 10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+simp:true;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+forget(x>4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(x>3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+oldcontext:context;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:temp;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:oldcontext;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:temp;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts(initial);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:initial;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+oldcontext:context;
+facts();
+ncont:supcontext();
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(x>2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(y<1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(y<5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:oldcontext;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(y<5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate_force_assume(f,x,a,b):=block([oldcontext:context,result],
+    context:supcontext(),
+    if(a<b) then assume(x>a,x<b) else if (b<a) then assume(x>b,x<a),
+    result:integrate(f,x,a,b),
+    context:oldcontext,
+    result
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate_force_assume(f,x,a,b):=(oldcontext:context,
+    context:supcontext(),
+    if(a<b) then assume(x>a,x<b) else if (b<a) then assume(x>b,x<a),
+    result:ev(integrate(f,x,a,b)),
+    context:oldcontext,
+    result
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=charfun(x>2)*charfun(x<7);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate_force_assume(f(x),x,10,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(x>2)*abs(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(abs(x-10)+x,x,20,30);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(x>2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:ifa;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(x>2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("abs_integrate.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(f(x),x,3,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:initial;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+facts();
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(x>3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(f(x),x,3,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+context:srtdyuioo;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(f(x),x,3,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(x>4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(f(x),x,10,3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fff(x,a):=x*charfun(x>a);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+gradef(fff(x,a),x,charfun(x>a));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(charfun(x>2),x,0,5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+q:integrate(sin(charfun(x>-1)*x)+cos(x*charfun(x<1)),x,0, %pi);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate_force_assume(sin(charfun(x>-1)*x)+cos(x*charfun(x<1)),x,0, %pi);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun((sin(x)<2) and (s<1));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+charfun(s<1 and s>1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("./integrateforceassume.mac");
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+q2:integrateforceassume(q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrateforceassume(q2);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
