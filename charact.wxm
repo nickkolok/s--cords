@@ -109,11 +109,10 @@ d: determinant(D);
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-hv   :makelist(0,k,1,8);
-v    :makelist(0,k,1,8);
-Dbuf :makelist(copymatrix(D),k,1,8);
+hv   :makelist(0,k,1,8)$
+v    :makelist(0,k,1,8)$
+Dbuf :makelist(copymatrix(D),k,1,8)$
 for i:1 thru 8 do (
-    /*Dbuf[i]: copymatrix(D),*/
     for j:1 thru 8 do(
         Dbuf[i][i][j]:w[j](x,s)
     ),
@@ -143,7 +142,7 @@ K(x,s):=-ev(sum(w[i](x,0) * w[i](s,0) * charfun(x-s>=0), i, 1, 4)*P(x,s));
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*K(x,s);*/
+/*K(x,s);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -158,7 +157,7 @@ slv(x,s):= sum((l[i](K))*v[i](x),i,1,8);
 
 /* [wxMaxima: input   start ] */
 /*slv(x,s);
-slv(x_1,s_1);*/
+slv(x_1,s_1);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
@@ -166,22 +165,7 @@ G(x,s):=ev(K(x,s) - slv(x,s),nouns)$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-/*G(5/2,5/2+1/10);
-G(5/2+1/10,5/2);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*at(G(x,s),[x=5/2,s=5/2+1/10]);
-at(G(x,s),[x=5/2+1/10,s=5/2]);*/
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*G(13/2,13/2+1/10);
-G(13/2+1/10,13/2);*/;
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
-/*G(x_1,s_1);*/
+/*G(x_1,s_1);*/;
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
