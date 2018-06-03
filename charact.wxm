@@ -191,13 +191,6 @@ k_1:0 $ k_2:0 $ k_3: 1$ k_4: 1$
 /* [wxMaxima: input   end   ] */
 
 /* [wxMaxima: input   start ] */
-L1:1$
-L2:1$
-L3:1$
-L4:1$
-/* [wxMaxima: input   end   ] */
-
-/* [wxMaxima: input   start ] */
 h:ev(G(x,s)*f(s))$
 /* [wxMaxima: input   end   ] */
 
