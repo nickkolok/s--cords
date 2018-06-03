@@ -1,18 +1,73 @@
 ttyoff: nolabels: true $
 
-integrate_force_assume_transform(f,x,a,b):=(oldcontext:context,
+integrate_force_assume_transform(
+	integrate_force_assume_transform_f,
+	integrate_force_assume_transform_x,
+	integrate_force_assume_transform_a,
+	integrate_force_assume_transform_b
+):=(
+	oldcontext:context,
     context:supcontext(),
-    if(a<b) then assume(x>a,x<b) else if (b<a) then assume(x>b,x<a),
-    result:ev(integrate(f,x,a,b)),
+    if(
+		integrate_force_assume_transform_a < integrate_force_assume_transform_b
+	) then assume(
+		integrate_force_assume_transform_x > integrate_force_assume_transform_a,
+		integrate_force_assume_transform_x < integrate_force_assume_transform_b
+	) else if (
+		integrate_force_assume_transform_b < integrate_force_assume_transform_a
+	) then assume(
+		integrate_force_assume_transform_x > integrate_force_assume_transform_b,
+		integrate_force_assume_transform_x < integrate_force_assume_transform_a
+	),
+    result:ev(integrate(
+		integrate_force_assume_transform_f,
+		integrate_force_assume_transform_x,
+		integrate_force_assume_transform_a,
+		integrate_force_assume_transform_b
+	)),
     context:oldcontext,
     result
 )$
 
 oldsimp:simp$
 simp:false$
-matchdeclare ([aa,bb,xx,cc,dd], all)$
-defrule(integrals_force_assume1, 'integrate(aa,xx,cc,dd), 'integrate_force_assume_transform(aa,xx,cc,dd))$
-defrule(integrals_force_assume2, 'integrate_force_assume_transform(aa,xx,cc,dd), ev(integrate_force_assume_transform(aa,xx,cc,dd)))$
+matchdeclare ([
+	integrate_force_assume_transform_aa,
+	integrate_force_assume_transform_bb,
+	integrate_force_assume_transform_xx,
+	integrate_force_assume_transform_cc,
+	integrate_force_assume_transform_dd
+], all)$
+defrule(
+	integrals_force_assume1,
+	'integrate(
+		integrate_force_assume_transform_aa,
+		integrate_force_assume_transform_xx,
+		integrate_force_assume_transform_cc,
+		integrate_force_assume_transform_dd
+	),
+	'integrate_force_assume_transform(
+		integrate_force_assume_transform_aa,
+		integrate_force_assume_transform_xx,
+		integrate_force_assume_transform_cc,
+		integrate_force_assume_transform_dd
+	)
+)$
+defrule(
+	integrals_force_assume2,
+	'integrate_force_assume_transform(
+		integrate_force_assume_transform_aa,
+		integrate_force_assume_transform_xx,
+		integrate_force_assume_transform_cc,
+		integrate_force_assume_transform_dd
+	),
+	ev(integrate_force_assume_transform(
+		integrate_force_assume_transform_aa,
+		integrate_force_assume_transform_xx,
+		integrate_force_assume_transform_cc,
+		integrate_force_assume_transform_dd
+	))
+)$
 simp:oldsimp$
 
 integrateforceassume(expr):=applyb1(apply1(expr,integrals_force_assume1),integrals_force_assume2)$
